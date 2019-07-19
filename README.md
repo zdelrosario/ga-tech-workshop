@@ -23,13 +23,46 @@ Git by Scott Chacon. Look for the tag
 This indicates that the mantainers will welcome a pull request fixing this
 issue.
 
+## Maintenance Plan (DRAFT)
 
-## Maintainer(s)
+### System
+The infrastructure of this lesson is cloned from the [software
+carpentries](https://github.com/carpentries/styles) template. While updating
+from the upstream repo is possible, this should be unnecessary unless critical
+issues are identified & fixed.
 
-Current maintainers of this lesson are
+The lessons themselves teach Python and a number of packages: matplotlib and the
+Citrination API (pycc). These are important upstream dependencies to keep the
+lessons updated and relevant.
 
-* Zach del Rosario (zdelrosario@citrine.io)
+There are no downstream dependencies of this software.
 
+### Status
+Under development.
+
+### Maintainer(s)
+* Zachary del Rosario (zdelrosario@citrine.io) "Maintainer"
+
+### Maintenance Concept
+The Maintainer will be responsible for ensuring that lessons accurately teach
+concepts from up-to-date versions of upstream dependencies. This includes both
+executable example codes, and teaching materials that reflect current syntax.
+Maintanence will be accomplished by ensuring example calls execute correctly,
+and adapting lesson materials as necessary to reflect API changes.
+
+It is not yet clear if we will employ unit tests for this repo -- most of the
+example code is in Jupyter notebooks. I (Zach) will have to consult with the
+rest of the Citrine team to determine if this will be possible.
+
+Maintenance of this repo will continue until the delivery of this workshop
+(scheduled for 2019, September 18 - 19). At this point, exercises and materials
+should be extracted and maintained in a more general repository.
+
+### Transfer
+The ability to transfer the role of Maintainer will be vested in the Sr.
+Community Manager. Transfer will entail giving access to this repo to the new
+Maintainer, as well as a transfer of all responsibilities listed under
+Maintenance Concept.
 
 ## Authors
 
