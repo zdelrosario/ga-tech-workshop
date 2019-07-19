@@ -1,10 +1,38 @@
 import pandas as pd
+import numpy as np
 from pypif_sdk.readview import ReadView
+from functools import reduce
 
+## Parsing
+##################################################
+# Filtered dir()
+def ddir(object):
+    return list(filter(lambda s: s[0] != "_", dir(object)))
+
+## Parsing
+##################################################
+# Get a PIF scalar
+def parsePifKey(pif, key):
+    """Parse a single pif key for single scalar values;
+    return nan if no scalar found.
+    """
+    if (key in ReadView(pif).keys()):
+        if 'scalars' in dir(ReadView(pif)[key]):
+            try:
+                return ReadView(pif)[key].scalars[0].value
+            except IndexError:
+                return np.nan
+        else:
+            return np.nan
+    else:
+        return np.nan
+
+# Flatten a collection of PIFs
 def pifs2df(pifs):
     """Converts a collection of PIFs to tabular data
-    Very simple, purpose-built utility script. Assumes the top-level keys
-    contain the relevant data, and flattens those keys to rectangular data.
+    Very simple, purpose-built utility script. Converts an iterable of PIFs
+    to a dataframe. Returns the superset of all PIF keys as the set of columns.
+    Non-scalar values are converted to nan.
 
     Usage
         df = pifs2df(pifs)
@@ -38,18 +66,21 @@ def pifs2df(pifs):
         ## Rectangularize the pifs
         df = pifs2df(pifs)
     """
-    ## Perform some checks
-    keys_ref = set(ReadView(pifs[0]).keys())
-    if not all([keys_ref == set(ReadView(pif).keys()) for pif in pifs]):
-        raise ValueError("PIFs do not have same top-level keys!")
+    ## Consolidate superset of keys
+    key_sets = [set(ReadView(pif).keys()) for pif in pifs]
+    keys_ref = reduce(
+        lambda s1, s2: s1.union(s2),
+        key_sets
+    )
 
     ## Rectangularize
+    ## TODO: Append dataframes, rather than using a comprehension
     df_data = \
         pd.DataFrame(
             columns = keys_ref,
             data = [
                 [
-                    ReadView(pif)[key].scalars[0].value \
+                    parsePifKey(pif, key) \
                     for key in keys_ref
                 ] for pif in pifs
             ]
