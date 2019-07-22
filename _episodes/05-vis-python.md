@@ -429,8 +429,7 @@ plt.close()
 [^1]: This is *literally* called a [magic function](https://stackoverflow.com/questions/43027980/purpose-of-matplotlib-inline/43028034), and is necessary to tell jupyter how to handle matplotlib figures. The version we use is one of the simpler options.
 [^2]: Equivalently, the bin size.
 [^3]: These thin lines are called *whiskers*
-[^4]: Since the data were generated from a uniform distribution, it happens that
-    the values given here are the *true* quantiles of the underlying population.
+[^4]: Since the data were generated from a uniform distribution, it happens that the values given here are the *true* quantiles of the underlying population.
 [^5]: *Levels* are possible values that a given discrete variable can take.
 
 {% include links.md %}
