@@ -10,6 +10,7 @@ keypoints:
 - "Approaches higher on _The Visual Hierarchy_ tend to be more effective at displaying data accurately."
 - "Consider reserving your x- and y-axes for the _most important_ variables."
 - "Consider using color to depict discrete variables with few levels."
+- "Try __many__ visualizations of the same data before settling on one."
 ---
 
 In this lesson, we will illustrate different methods of visualizing information,
@@ -93,7 +94,7 @@ Now that we have seen the Visual Hierarchy, let's put it to use designing
 visualizations. First, we'll study different visualizations of the same data,
 and assess how well they do at conveying meaning.
 
-### Gapminder Example
+### Gapminder Examples
 <!-- ------------------------- -->
 The following figures use data from the [Gapminder](https://www.gapminder.org/)
 project. Both figures depict the same data and variables, but make different
@@ -111,13 +112,35 @@ Did you make different observations using the two visualizations?
 
 While its entirely possible using Gapminder A to see that `Life Expectancy at
 Birth` is generally lower for African counteries, the pattern is quite a bit
-more difficult to make comparisons using a color scale, as opposed to a common
+more difficult to make out using a color scale, as opposed to a common
 positional scale. It is also clearer from Gapminder B that there is an observed
 (positive) correlation between `GDP / Capita` and `Life Expectancy at Birth`.
 
 Note that `Continent` takes only 5 discrete values; it is easy to find 5 colors
-that stand apart well.
+that stand apart well. I believe that Gapminder B above is the more effective
+visualization, as it makes better use of our axes (positional scales).
 
+Next, let's take a look at two additional visualizations using the Gapminder
+data. Both depict timeseries of `GDP / Capita` and `Life Expectancy at Birth`,
+but make different choices about which variable is depicted on a positional
+scale.
+
+<img src="../../fig/03_gapminder_timeseries_gdp.png" style="width:600px;height:600px;">
+
+<img src="../../fig/03_gapminder_timeseries_life.png" style="width:600px;height:600px;">
+
+Here it is less obvious to me which is the "better" of the two visualizations.
+In the first it is easy to see that `Australia, New Caledonia, French Polynesia,
+and New Zealand` cluster near each other in `GDP / Capita`, with a large gap
+with the remaining Oceanic countries. In the second, it is much easier to see
+the gap in `Life Expectancy at Birth` between `Austraila and New Zealand` and
+the remaining countries.
+
+Which is the "correct" choice depends on the purpose of the visualization. If
+one variable has greater importance (and that variable takes many values), then
+that variable should be placed on a positional scale. If all variables are
+important, then it is important to prepare many different graphs and study them
+all.
 
 [^1]: Cleveland and McGill, "Graphical perception and graphical methods for analyzing scientific data" (1985) Science
 [^2]: With slope not too close to 0, 90, or 180 degrees.
