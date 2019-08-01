@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import re
 from pypif_sdk.readview import ReadView
 from functools import reduce
 
@@ -87,3 +88,67 @@ def pifs2df(pifs):
         )
 
     return df_data
+
+# Formula to dict
+def parse_formula(formula):
+    """Parse a formula string
+    Usage
+        d = parse_formula(formula)
+    Arguments
+        formula = chemical formula; string
+    Returns
+        d = python dict of element keys and compositional fractions
+    """
+    composition = dict(map(
+        lambda s: (
+            re.search(r'\D+', s).group(),
+            float(re.search(r'[\d\.]+', s).group())
+        ),
+        re.findall(
+            r'\w+[\d\.]+',
+            formula
+            #ReadView(pifs[0]).chemical_formula
+        )
+    ))
+    return composition
+
+# Parse formulas, return a DataFrame
+def formulas2df(formulas):
+    """Convert an iterable of formulas to a DataFrame
+    Usage
+        df = formulas2df(formulas)
+    Arguments
+        formulas = chemical formulas; iterable of strings
+    Returns
+        df = DataFrame of chemical compositions; keys are elements, entries are
+             composition fractions
+    """
+
+    # Parse all the formulas
+    all_compositions = [
+        parse_formula(formula) \
+        for formula in formulas
+    ]
+    all_formulas = [set(d.keys()) for d in all_compositions]
+
+    # Determine the superset of elements
+    all_elements = reduce(
+        lambda s1, s2: s1.union(s2),
+        all_formulas
+    )
+
+    # Join all formulas
+    df_composition = pd.DataFrame(columns = all_elements)
+
+    for ind in range(len(all_compositions)):
+        df_composition = df_composition.append(
+            pd.DataFrame(
+                columns = all_compositions[ind].keys(),
+                data = [all_compositions[ind].values()]
+            ),
+            ignore_index = True,
+            sort = True
+        )
+        df_composition = df_composition.fillna(0)
+
+    return df_composition
