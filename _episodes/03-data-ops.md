@@ -1,7 +1,7 @@
 ---
 title: "Programmatic Data Operations"
 teaching: 10
-exercises: 40
+exercises: 50
 questions:
 - "Why use programming to operate on data?"
 objectives:

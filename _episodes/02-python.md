@@ -1,7 +1,7 @@
 ---
-title: "Introduction"
+title: "Introduction to Python and Jupyter"
 teaching: 10
-exercises: 0
+exercises: 80
 questions:
 - "Why take a *programmatic* approach to materials informatics?"
 objectives:

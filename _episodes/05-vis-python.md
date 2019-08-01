@@ -1,7 +1,7 @@
 ---
 title: "Visualizing in Python with matplotlib"
 teaching: 10
-exercises: 30
+exercises: 50
 questions:
 - "How do we visualize data in Python?"
 objectives:
