@@ -36,6 +36,28 @@ mistake.[^1] Of course, we're not going to be able to teach you everything you
 need to know about math and statistics in a one-day workshop. But we can pick
 out an important slice of content, and lay a foundation for further study.
 
-[^1]: The sort of thing that software does not have an error message for, like p-hacking or abusing the interpretation of regression coefficients.
+## Fitting a Machine Learning Model
+<!-- -------------------------------------------------- -->
+
+
+## Underfitting and Overfitting
+<!-- -------------------------------------------------- -->
+
+## Cross-Validation
+<!-- -------------------------------------------------- -->
+
+## Further Study
+<!-- -------------------------------------------------- -->
+
+### A Proper Introduction
+<!-- ------------------------- -->
+
+If I had to recommend a single book for this area, I would point you to [An
+Introduction to Statistical
+Learning](http://faculty.marshall.usc.edu/gareth-james/ISL/), by James, Witten,
+Hastie, and Tibshirani. This text is freely available in PDF form, and covers
+all the basics of fitting regression and classification models.
+
+[^1]: Mistakes of the sort for which software does not have an error message, like p-hacking or abusing the interpretation of regression coefficients.
 
 {% include links.md %}
