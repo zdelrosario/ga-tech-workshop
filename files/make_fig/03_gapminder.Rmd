@@ -1,0 +1,139 @@
+---
+title: "Gapminder Figs"
+author: "Zach"
+date: 2019-07-25
+output:
+  github_document
+---
+
+```{r setup}
+library(tidyverse)
+library(gapminder)
+```
+
+```{r }
+gapminder_unfiltered %>%
+  glimpse
+```
+
+## Life Expectancy and GDP/Capita
+
+```{r vis_life_v_gdp_bad}
+gapminder_unfiltered %>%
+  filter(
+    year == 2007,
+    continent != "FSU"
+  ) %>%
+  ggplot(aes(continent, gdpPercap)) +
+  geom_point(
+    aes(size = pop, fill = lifeExp),
+    pch = 21
+  ) +
+  viridis::scale_fill_viridis(name = "Life Expectancy at Birth") +
+  scale_size_continuous(
+    name = "Population",
+    range = c(3, 20),
+    breaks = c(1e5, 1e7, 1e9)
+  )+
+  theme_minimal() +
+  theme(
+    legend.position = "bottom",
+    legend.box = "vertical"
+  ) +
+  labs(
+    x = "Continent",
+    y = "GDP / Capita (US $, Inflation-adjusted)",
+    subtitle = "In 2007",
+    caption = "Data from Gapminder"
+  )
+ggsave("../../fig/03_gapminder_bad.png")
+```
+
+```{r vis_life_v_gdp_standard}
+gapminder_unfiltered %>%
+  filter(
+    year == 2007,
+    continent != "FSU"
+  ) %>%
+  ggplot(aes(gdpPercap, lifeExp)) +
+  geom_point(
+    aes(size = pop, fill = continent),
+    pch = 21
+  ) +
+  scale_x_log10() +
+  scale_size_continuous(
+    name = "Population",
+    range = c(3, 20),
+    breaks = c(1e5, 1e7, 1e9)
+  )+
+  scale_fill_discrete(name = "Continent") +
+  theme_minimal() +
+  theme(
+    legend.position = "bottom",
+    legend.box = "vertical"
+  ) +
+  labs(
+    x = "GDP / Capita (US $, Inflation-adjusted)",
+    y = "Life Expectancy at birth (Years)",
+    subtitle = "In 2007",
+    caption = "Data from Gapminder"
+  )
+ggsave("../../fig/03_gapminder_standard.png")
+```
+
+## Timeseries
+
+```{r timeseries-gdp}
+gapminder_unfiltered %>%
+  filter(
+    continent == "Oceania",
+    ((year + 3) %% 5) == 0
+  ) %>%
+  ggplot(aes(year, gdpPercap, group = country)) +
+  geom_line(
+    aes(color = fct_reorder2(country, year, gdpPercap)),
+    size = 1
+  ) +
+  geom_point(
+    aes(fill = lifeExp),
+    size = 4,
+    pch = 21
+  ) +
+  scale_y_log10() +
+  scale_color_discrete(name = "Country") +
+  viridis::scale_fill_viridis(name = "Life Expectancy at Birth") +
+  theme_minimal() +
+  labs(
+    x = "Year",
+    y =  "GDP / Capita (US $, Inflation-adjusted)",
+    caption = "Data from Gapminder"
+  )
+ggsave("../../fig/03_gapminder_timeseries_gdp.png")
+```
+
+```{r timeseries-life}
+gapminder_unfiltered %>%
+  filter(
+    continent == "Oceania",
+    ((year + 3) %% 5) == 0
+  ) %>%
+  ggplot(aes(year, lifeExp, group = country)) +
+  geom_line(
+    aes(color = fct_reorder2(country, year, lifeExp)),
+    size = 1
+  ) +
+  geom_point(
+    aes(fill = log10(gdpPercap)),
+    size = 4,
+    pch = 21
+  ) +
+  scale_color_discrete(name = "Country") +
+  viridis::scale_fill_viridis(name = "GDP / Capita (log10 US $, Infl. Adj.)") +
+  theme_minimal() +
+  labs(
+    x = "Year",
+    y =  "Life Expectancy at Birth (Years)",
+    caption = "Data from Gapminder"
+  )
+ggsave("../../fig/03_gapminder_timeseries_life.png")
+```
