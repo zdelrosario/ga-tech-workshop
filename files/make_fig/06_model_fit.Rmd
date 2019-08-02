@@ -12,8 +12,8 @@ library(modelr)
 ```
 
 ```{r }
-set.seed(101)
-n <- 10
+set.seed(103)
+n <- 20
 
 color_values <-
   c(
@@ -43,6 +43,9 @@ fit_quad <-
     formula = y_meas ~ poly(x, degree = 2)
   )
 ```
+
+## Basic fits
+<!-- -------------------------------------------------- -->
 
 ```{r }
 df_data %>%
@@ -105,6 +108,9 @@ df_data %>%
   )
 ggsave("../../fig/06_model_fit_mean.png")
 ```
+
+## Over/under fits
+<!-- -------------------------------------------------- -->
 
 ```{r }
 df_data %>%
@@ -224,11 +230,11 @@ ggsave("../../fig/06_model_fit_quad.png")
 fit_poly <-
   lm(
     data = df_data,
-    formula = y_meas ~ poly(x, degree = 8)
+    formula = y_meas ~ poly(x, degree = 14)
   )
 
 df_ref <-
-  tibble(x = seq(0, 1, length.out = 100)) %>%
+  tibble(x = seq(0, 1, length.out = 500)) %>%
   add_predictions(fit_poly, var = "y_pred")
 
 df_data %>%
@@ -264,4 +270,48 @@ df_data %>%
     y = "Response"
   )
 ggsave("../../fig/06_model_fit_overfit.png")
+```
+
+## Cross-validation fits
+<!-- -------------------------------------------------- -->
+
+```{r }
+set.seed(101)
+df_folds <- crossv_kfold(df_data, k = 5)
+
+do_cv <- function(order) {
+  pmap_dfr(
+    df_folds,
+    function(train, test, .id) {
+      fit <- lm(formula = y_meas ~ poly(x, order), data = train)
+
+      tibble(
+        id = .id,
+        rmse = rmse(fit, test),
+        order = order
+      )
+    }
+  )
+}
+
+df_cv <- map_dfr(seq(1, 8), do_cv)
+
+df_cv %>%
+  ggplot(aes(order, rmse)) +
+  ## geom_boxplot(aes(group = order)) +
+  geom_smooth(se = F, size = 2) +
+  geom_point(
+    position = position_jitter(width = 0.1, height = 0),
+    size = 3,
+    pch = 21,
+    fill = "grey70",
+    color = "black"
+  ) +
+  scale_x_continuous(breaks = seq(1,10)) +
+  theme_minimal() +
+  labs(
+    x = "Polynomial Order",
+    y = "RMSE"
+  )
+ggsave("../../fig/06_model_fit_cv.png")
 ```
