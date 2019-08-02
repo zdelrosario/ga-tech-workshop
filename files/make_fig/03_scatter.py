@@ -55,7 +55,7 @@ plt.scatter(X1[:, 0], X1[:, 1])
 plt.xlabel("X")
 plt.ylabel("Y")
 
-plt.savefig("../../fig/03_scatter1.png")
+plt.savefig("../../fig/05_scatter1.png")
 plt.close()
 
 # Strongly-correlated data
@@ -66,7 +66,7 @@ plt.scatter(X2[:, 0], X2[:, 1])
 plt.xlabel("X")
 plt.ylabel("Y")
 
-plt.savefig("../../fig/03_scatter2.png")
+plt.savefig("../../fig/05_scatter2.png")
 plt.close()
 
 # Nonlinear-related data
@@ -77,7 +77,7 @@ plt.scatter(X3[:, 0], X3[:, 1])
 plt.xlabel("X")
 plt.ylabel("Y")
 
-plt.savefig("../../fig/03_scatter3.png")
+plt.savefig("../../fig/05_scatter3.png")
 plt.close()
 
 # 3-dimensional data
@@ -95,5 +95,5 @@ plt.ylabel("Y")
 cbar = plt.colorbar()
 cbar.set_label("Z")
 
-plt.savefig("../../fig/03_scatter4.png")
+plt.savefig("../../fig/05_scatter4.png")
 plt.close()

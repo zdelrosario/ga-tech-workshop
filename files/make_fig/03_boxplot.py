@@ -15,7 +15,7 @@ plt.boxplot(X1)
 plt.xlabel("X")
 plt.ylabel("Value")
 
-plt.savefig("../../fig/03_boxplot1.png")
+plt.savefig("../../fig/05_boxplot1.png")
 plt.close()
 
 ## Two boxplots
@@ -27,5 +27,5 @@ plt.boxplot(
 plt.xlabel("X")
 plt.ylabel("Value")
 
-plt.savefig("../../fig/03_boxplot2.png")
+plt.savefig("../../fig/05_boxplot2.png")
 plt.close()

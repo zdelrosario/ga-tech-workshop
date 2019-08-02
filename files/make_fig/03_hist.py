@@ -18,7 +18,7 @@ plt.hist(
 plt.xlabel("X")
 plt.ylabel("Count")
 
-plt.savefig("../../fig/03_hist1.png")
+plt.savefig("../../fig/05_hist1.png")
 plt.close()
 
 ## hist2; fewer bins
@@ -32,5 +32,5 @@ plt.hist(
 plt.xlabel("X")
 plt.ylabel("Count")
 
-plt.savefig("../../fig/03_hist2.png")
+plt.savefig("../../fig/05_hist2.png")
 plt.close()

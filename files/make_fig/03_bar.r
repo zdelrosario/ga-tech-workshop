@@ -20,4 +20,4 @@ df_tmp %>%
     y = "Count"
   )
 
-ggsave("../../fig/03_bar.png")
+ggsave("../../fig/05_bar.png")
