@@ -51,7 +51,7 @@ the Citrination API. You will first need to [sign
 up](https://citrination.com/users/sign_in) for an account. After creating an
 account, navigate to "Account Settings" to find your API key.
 
-<img src="../../fig/citrination_account_settings.png" style="width:800px;height:400px;">
+<img src="../fig/citrination_account_settings.png" style="width:800px;height:400px;">
 
 > ## Protip: Don't share your API key!
 > An *API key* is like a password -- it is a secret access code that grants you entry
@@ -128,15 +128,15 @@ in, then start constructing an API call to match. For instance, I searched for
 materials with the "strength" property, found a ceramic with strength values,
 then navigated to its parent dataset.
 
-<img src="../../fig/citrination_search_strength.png" style="width:800px;height:400px;">
+<img src="../fig/citrination_search_strength.png" style="width:800px;height:400px;">
 
 Searching for materials with a "strength" property.
 
-<img src="../../fig/citrination_material-2-dataset.png" style="width:800px;height:400px;">
+<img src="../fig/citrination_material-2-dataset.png" style="width:800px;height:400px;">
 
 Inspecting a ceramic with "strength" properties, following the parent dataset.
 
-<img src="../../fig/citrination_nist_ceramics.png" style="width:800px;height:400px;">
+<img src="../fig/citrination_nist_ceramics.png" style="width:800px;height:400px;">
 
 Below I took the NIST Ceramics dataset ID above and assigned it to a Python
 variable for later access.

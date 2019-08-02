@@ -86,7 +86,7 @@ In the case where a variable `X` can only take a discrete set of values -- let's
 say `[A, B, C]` -- a barplot simply visualizes the count of observations that
 fall into each category.
 
-<img src="../../fig/03_bar.png" style="width:400px;height:400px;">
+<img src="../fig/05_bar.png" style="width:400px;height:400px;">
 
 *However*, what if `X` instead took continuous values? In this case, it would
 not be possible to simply sort the observations into discrete values and count
@@ -100,7 +100,7 @@ value); in this setting, our only degree of freedom is the number of bins.[^2]
 The result of binning the data in this way and producing a bar plot is called
 a *histogram*, an example of which is shown below.
 
-<img src="../../fig/03_hist1.png" style="width:400px;height:400px;">
+<img src="../fig/05_hist1.png" style="width:400px;height:400px;">
 
 The histogram above uses `30` bins; the one below `20` bins. Note that different
 "features" arise in the two plots of *the same data*. The tall 'spikes' we see
@@ -110,7 +110,7 @@ concentrate around that value. Unless you change the bin size (equivalently, the
 count) to check if these features persist across *arbitrary plotting choices*,
 you **cannot** be sure these features actually exist.
 
-<img src="../../fig/03_hist2.png" style="width:400px;height:400px;">
+<img src="../fig/05_hist2.png" style="width:400px;height:400px;">
 
 The following code will reproduce the two histograms above.
 
@@ -135,7 +135,7 @@ plt.hist(
 plt.xlabel("X")
 plt.ylabel("Count")
 
-plt.savefig("../../fig/03_hist1.png")
+plt.savefig("../../fig/05_hist1.png")
 plt.close()
 
 ## hist2; fewer bins
@@ -149,7 +149,7 @@ plt.hist(
 plt.xlabel("X")
 plt.ylabel("Count")
 
-plt.savefig("../../fig/03_hist2.png")
+plt.savefig("../../fig/05_hist2.png")
 plt.close()
 ~~~
 {: .language-python}
@@ -187,7 +187,7 @@ The figure below depicts a boxplot with no outliers. The median is just a bit
 over `0.5`, the lower and upper quartiles are near `0.25` and `0.75`, and the
 fences are near `0` and `1`.[^4]
 
-<img src="../../fig/03_boxplot1.png" style="width:400px;height:400px;">
+<img src="../fig/05_boxplot1.png" style="width:400px;height:400px;">
 
 The figure below depicts two sets of data `X1` and `X2` on the same vertical
 axis, allowing direct comparison. We can see that `X2` tends to be more
@@ -195,7 +195,7 @@ concentrated -- visible as boxes and fences nearer to their respective median.
 We can also see that `X2` seems to have five outliers, represented as the open
 dots above and below the primary boxplot.
 
-<img src="../../fig/03_boxplot2.png" style="width:400px;height:400px;">
+<img src="../fig/05_boxplot2.png" style="width:400px;height:400px;">
 
 The figures above were generated with the following code.
 
@@ -220,7 +220,7 @@ plt.boxplot(X1)
 plt.xlabel("X")
 plt.ylabel("Value")
 
-plt.savefig("../../fig/03_boxplot1.png")
+plt.savefig("../../fig/05_boxplot1.png")
 plt.close()
 
 ## Two boxplots
@@ -232,7 +232,7 @@ plt.boxplot(
 plt.xlabel("X")
 plt.ylabel("Value")
 
-plt.savefig("../../fig/03_boxplot2.png")
+plt.savefig("../../fig/05_boxplot2.png")
 plt.close()
 ~~~
 {: .language-python}
@@ -261,17 +261,17 @@ called a *scatterplot*.
 
 The following scatterplot depicts data with a moderate *linear correlation*.
 
-<img src="../../fig/03_scatter1.png" style="width:400px;height:400px;">
+<img src="../fig/05_scatter1.png" style="width:400px;height:400px;">
 
 The following scatterplot depicts data with a strong linear correlation.
 
-<img src="../../fig/03_scatter2.png" style="width:400px;height:400px;">
+<img src="../fig/05_scatter2.png" style="width:400px;height:400px;">
 
 Scatterplots are particularly useful for inspecting patterns that are difficult
 to describe with summary statistics. The following plot shows data which
 formally have zero linear correlation, but clearly exhibit some relation.
 
-<img src="../../fig/03_scatter3.png" style="width:400px;height:400px;">
+<img src="../fig/05_scatter3.png" style="width:400px;height:400px;">
 
 **Depicting additional variables**
 
@@ -295,7 +295,7 @@ As an example: the following plot depicts three-dimensional data by using color
 to encode a third `Z` variable. Visually we can see that larger values in `Z`
 are associated with large values in `X` and `Y`.
 
-<img src="../../fig/03_scatter4.png" style="width:400px;height:400px;">
+<img src="../fig/05_scatter4.png" style="width:400px;height:400px;">
 
 Based on our discussion of /The Visual Hierarchy/, you might suspect that we
 should use coordinates for the most "important" variables. While this is the
@@ -373,7 +373,7 @@ plt.scatter(X1[:, 0], X1[:, 1])
 plt.xlabel("X")
 plt.ylabel("Y")
 
-plt.savefig("../../fig/03_scatter1.png")
+plt.savefig("../../fig/05_scatter1.png")
 plt.close()
 
 # Strongly-correlated data
@@ -384,7 +384,7 @@ plt.scatter(X2[:, 0], X2[:, 1])
 plt.xlabel("X")
 plt.ylabel("Y")
 
-plt.savefig("../../fig/03_scatter2.png")
+plt.savefig("../../fig/05_scatter2.png")
 plt.close()
 
 # Nonlinear-related data
@@ -395,7 +395,7 @@ plt.scatter(X3[:, 0], X3[:, 1])
 plt.xlabel("X")
 plt.ylabel("Y")
 
-plt.savefig("../../fig/03_scatter3.png")
+plt.savefig("../../fig/05_scatter3.png")
 plt.close()
 
 # 3-dimensional data
@@ -413,7 +413,7 @@ plt.ylabel("Y")
 cbar = plt.colorbar()
 cbar.set_label("Z")
 
-plt.savefig("../../fig/03_scatter4.png")
+plt.savefig("../../fig/05_scatter4.png")
 plt.close()
 ~~~
 {: .language-python}
@@ -423,7 +423,7 @@ plt.close()
 
 > ## Exercise: Plot This
 >
-> Complete this [jupyter notebook](https://github.com/zdelrosario/gatw-citrine-day2/blob/gh-pages/files/03_exercise.ipynb)
+> Complete this [jupyter notebook](https://github.com/zdelrosario/gatw-citrine-day2/blob/gh-pages/files/05_exercise.ipynb)
 {: .challenge}
 
 [^1]: This is *literally* called a [magic function](https://stackoverflow.com/questions/43027980/purpose-of-matplotlib-inline/43028034), and is necessary to tell jupyter how to handle matplotlib figures. The version we use is one of the simpler options.

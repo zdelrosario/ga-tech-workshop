@@ -46,7 +46,7 @@ gapminder_unfiltered %>%
     subtitle = "In 2007",
     caption = "Data from Gapminder"
   )
-ggsave("../../fig/03_gapminder_bad.png")
+ggsave("../../fig/04_gapminder_bad.png")
 ```
 
 ```{r vis_life_v_gdp_standard}
@@ -78,7 +78,7 @@ gapminder_unfiltered %>%
     subtitle = "In 2007",
     caption = "Data from Gapminder"
   )
-ggsave("../../fig/03_gapminder_standard.png")
+ggsave("../../fig/04_gapminder_standard.png")
 ```
 
 ## Timeseries
@@ -108,7 +108,7 @@ gapminder_unfiltered %>%
     y =  "GDP / Capita (US $, Inflation-adjusted)",
     caption = "Data from Gapminder"
   )
-ggsave("../../fig/03_gapminder_timeseries_gdp.png")
+ggsave("../../fig/04_gapminder_timeseries_gdp.png")
 ```
 
 ```{r timeseries-life}
@@ -135,5 +135,5 @@ gapminder_unfiltered %>%
     y =  "Life Expectancy at Birth (Years)",
     caption = "Data from Gapminder"
   )
-ggsave("../../fig/03_gapminder_timeseries_life.png")
+ggsave("../../fig/04_gapminder_timeseries_life.png")
 ```

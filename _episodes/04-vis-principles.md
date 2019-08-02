@@ -48,7 +48,7 @@ is _not_ necessarily a good figure -- it would be more common to flip the axes
 here (swap Count and Style), and the connecting lines between points are
 unnecessary / distracting.
 
-<img src="../../fig/03_common_scale.png" style="width:400px;height:400px;">
+<img src="../fig/04_common_scale.png" style="width:400px;height:400px;">
 
 __Position on identical but nonaligned scales__: Here comparing within the `fwd`
 and `rwd` groups is easy, but across the groups comparison is more challenging.
@@ -56,7 +56,7 @@ To make numerical comparisons, we can read values off the respective scales, and
 compare those numbers in our heads. This method of comparison is less immediate
 than the rung above.
 
-<img src="../../fig/03_nonaligned_scale.png" style="width:400px;height:400px;">
+<img src="../fig/04_nonaligned_scale.png" style="width:400px;height:400px;">
 
 __Length__: Here since the bars are "stacked", it is difficult to read the
 values for the `fwd` group. For a numerical comparison, we could read the
@@ -65,13 +65,13 @@ differences -- this would involve more calculation than either rung above. We
 could also try to compare the lengths of the bars directly -- this would be
 more challenging than either rung above..
 
-<img src="../../fig/03_length.png" style="width:400px;height:400px;">
+<img src="../fig/04_length.png" style="width:400px;height:400px;">
 
 __Angle__: Here we have a situation similar to above, but with values arranged
 radially. Both decoding schemes from "Length" can be applied similarly, but with
 added difficulty in interpreting angles rather than lengths.
 
-<img src="../../fig/03_angle.png" style="width:400px;height:400px;">
+<img src="../fig/04_angle.png" style="width:400px;height:400px;">
 
 __Area__: Here quantitative values (below, `Counts`) are encoded as the area of
 circles. While making _qualitative_ comparisons between highly dissimilar values
@@ -79,14 +79,14 @@ is possible (e.g. `wagon` vs `sedan`), comparisons between similar values is
 challenging (e.g. `hatchback` vs `sedan` in `fwd`), as is making _quantitative_
 comparisons.
 
-<img src="../../fig/03_area.png" style="width:400px;height:400px;">
+<img src="../fig/04_area.png" style="width:400px;height:400px;">
 
 __Color saturation__: Here the `Counts` are encoded as the color saturation of
 equal-sized circles. Larger values are brighter, while smaller values are
 darker. As with angle, distinguishing between similar values when using
 saturation is quite challenging.
 
-<img src="../../fig/03_sat.png" style="width:400px;height:400px;">
+<img src="../fig/04_sat.png" style="width:400px;height:400px;">
 
 ## Uses of the Rungs
 <!-- -------------------------------------------------- -->
@@ -102,11 +102,11 @@ choices about how to display the data.
 
 __Gapminder A__: List any observations about the data you see from the first visual:
 
-<img src="../../fig/03_gapminder_bad.png" style="width:600px;height:600px;">
+<img src="../fig/04_gapminder_bad.png" style="width:600px;height:600px;">
 
 __Gapminder B__: List any observations about the data you can see in the next visual:
 
-<img src="../../fig/03_gapminder_standard.png" style="width:600px;height:600px;">
+<img src="../fig/04_gapminder_standard.png" style="width:600px;height:600px;">
 
 Did you make different observations using the two visualizations?
 
@@ -125,9 +125,9 @@ data. Both depict timeseries of `GDP / Capita` and `Life Expectancy at Birth`,
 but make different choices about which variable is depicted on a positional
 scale.
 
-<img src="../../fig/03_gapminder_timeseries_gdp.png" style="width:600px;height:600px;">
+<img src="../fig/04_gapminder_timeseries_gdp.png" style="width:600px;height:600px;">
 
-<img src="../../fig/03_gapminder_timeseries_life.png" style="width:600px;height:600px;">
+<img src="../fig/04_gapminder_timeseries_life.png" style="width:600px;height:600px;">
 
 Here it is less obvious to me which is the "better" of the two visualizations.
 In the first it is easy to see that `Australia, New Caledonia, French Polynesia,
