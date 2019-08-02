@@ -35,10 +35,10 @@ repo-check :
 
 # Pack the assignment files for distribution
 pack:
-	zip exercises.zip ./files/exercises/02_exercise.ipynb \
-                          ./files/exercises/03_exercise.ipynb \
-                          ./files/exercises/04_exercise.ipynb \
-                          ./files/exercises/workshop_utils.py
+	zip exercises.zip -j ./files/exercises/02_exercise.ipynb \
+                             ./files/exercises/03_exercise.ipynb \
+                             ./files/exercises/04_exercise.ipynb \
+                             ./files/exercises/workshop_utils.py
 
 ## clean            : clean up junk files.
 clean :
