@@ -38,7 +38,8 @@ pack:
 	zip exercises.zip -j ./files/exercises/02_exercise.ipynb \
                              ./files/exercises/03_exercise.ipynb \
                              ./files/exercises/04_exercise.ipynb \
-                             ./files/exercises/workshop_utils.py
+                             ./files/exercises/workshop_utils.py \
+                             ./files/exercises/check_install.ipynb
 
 ## clean            : clean up junk files.
 clean :
