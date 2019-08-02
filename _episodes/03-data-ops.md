@@ -341,9 +341,7 @@ some of the
 > Complete [03_exercise.ipynb](../files/exercises/03_exercise.ipynb)
 {: .challenge}
 
-[^1]: If you were to share a script with your API key, you will have shared your
-    key with someone else. Game over!
-[^2]: Since `pifs2df` was purpose-built for this exercise, it's not guaranteed
-    to work for arbitrary cases. Your mileage may vary!
+[^1]: If you were to share a script with your API key, you will have shared your key with someone else. Game over!
+[^2]: Since `pifs2df` was purpose-built for this exercise, it's not guaranteed to work for arbitrary cases. Your mileage may vary!
 
 {% include links.md %}
