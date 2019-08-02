@@ -120,8 +120,7 @@ df_data %>%
   ) +
   geom_segment(
     aes(x, y_meas, xend = x, yend = y_pred, color = "Residual"),
-    size = 1,
-    color = "red"
+    size = 1
   ) +
   geom_point(
     aes(x, y_meas, color = "Measurement"),
