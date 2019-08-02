@@ -277,6 +277,8 @@ greater than four would lead to overfitting, which is useful information.
 ## Further Study
 <!-- -------------------------------------------------- -->
 
+The following are suggested directions for further study in Materials Informatics.
+
 ### A Proper Introduction
 <!-- ------------------------- -->
 
@@ -285,6 +287,20 @@ Introduction to Statistical
 Learning](http://faculty.marshall.usc.edu/gareth-james/ISL/), by James, Witten,
 Hastie, and Tibshirani. This text is freely available in PDF form, and covers
 all the basics of fitting regression and classification models.
+
+### Materials Featurization
+<!-- ------------------------- -->
+
+The following sources provide tools for featurizing materials data. Note that
+these packages tend to provide a lot more than _just_ featurization.
+
+[Matminer](https://hackingmaterials.lbl.gov/matminer/) provides a number of
+featurizing tools for inorganic compounds.
+
+[RDKit](https://www.rdkit.org/docs/GettingStartedInPython.html#descriptor-calculation)
+provides a number of "descriptors" (features) for organic molecules, taking
+[SMILES](https://en.wikipedia.org/wiki/Simplified_molecular-input_line-entry_system)
+inputs.
 
 [^1]: Mistakes of the sort for which software does not have an error message, like p-hacking or abusing the interpretation of regression coefficients.
 [^2]: There exist many ways to estimate the error in a model. Cross-validation is especially helpful when we do not have _a ton_ of data, and want to use it efficiently. Other approaches include the train-test-validate framework, which splits the data in a different way.
