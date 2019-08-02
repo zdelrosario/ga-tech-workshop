@@ -1,0 +1,244 @@
+---
+title: "Fitting a model: Examples"
+author: "Zach"
+date: 2019-08-02
+output:
+  github_document
+---
+
+```{r }
+library(tidyverse)
+library(modelr)
+```
+
+```{r }
+set.seed(101)
+n <- 10
+
+df_data <-
+  tibble(x = seq(0, 1, length.out = n)) %>%
+  mutate(
+    y = x^2,
+    y_meas = y + 0.2 * rnorm(n = n),
+    y_mean = mean(y)
+  )
+
+fit_linear <-
+  lm(
+    data = df_data,
+    formula = y_meas ~ x
+  )
+
+fit_quad <-
+  lm(
+    data = df_data,
+    formula = y_meas ~ poly(x, degree = 2)
+  )
+```
+
+```{r }
+df_data %>%
+  ggplot() +
+  geom_line(
+    aes(x, y),
+    size = 1 / 2
+  ) +
+  geom_segment(
+    aes(x, y_meas, xend = x, yend = y),
+    linetype = 1,
+    size = 1,
+    color = "red"
+  ) +
+  geom_point(
+    aes(x, y_meas),
+    size = 3
+  ) +
+  scale_x_continuous(breaks = c(0, 1/2, 1)) +
+  scale_y_continuous(breaks = c(0, 1/2, 1)) +
+  theme_minimal() +
+  labs(
+    x = "Feature",
+    y = "Response"
+  )
+ggsave("../../fig/06_model_fit_true.png")
+```
+
+```{r }
+df_data %>%
+  ggplot() +
+  geom_line(
+    aes(x, y_mean),
+    size = 1 / 2
+  ) +
+  geom_segment(
+    aes(x, y_meas, xend = x, yend = y_mean),
+    linetype = 1,
+    size = 1,
+    color = "red"
+  ) +
+  geom_point(
+    aes(x, y_meas),
+    size = 3
+  ) +
+  scale_x_continuous(breaks = c(0, 1/2, 1)) +
+  scale_y_continuous(breaks = c(0, 1/2, 1)) +
+  theme_minimal() +
+  labs(
+    x = "Feature",
+    y = "Response"
+  )
+ggsave("../../fig/06_model_fit_mean.png")
+```
+
+```{r }
+df_data %>%
+  add_predictions(fit_linear, var = "y_pred") %>%
+  ggplot() +
+  geom_line(
+    aes(x, y),
+    size = 1 / 2,
+    linestyle = 2,
+    color = "grey80"
+  ) +
+  geom_line(
+    aes(x, y_pred),
+    size = 1 / 2
+  ) +
+  geom_segment(
+    aes(x, y_meas, xend = x, yend = y_pred),
+    linetype = 1,
+    size = 1,
+    color = "red"
+  ) +
+  geom_point(
+    aes(x, y_meas),
+    size = 3
+  ) +
+  scale_x_continuous(breaks = c(0, 1/2, 1)) +
+  scale_y_continuous(breaks = c(0, 1/2, 1)) +
+  theme_minimal() +
+  labs(
+    x = "Feature",
+    y = "Response"
+  )
+ggsave("../../fig/06_model_fit_linear.png")
+```
+
+```{r }
+fit_linear_noiseless <-
+  lm(
+    data = df_data,
+    formula = y ~ x
+  )
+
+df_data %>%
+  add_predictions(fit_linear_noiseless, var = "y_pred") %>%
+  ggplot() +
+  geom_line(
+    aes(x, y),
+    size = 1 / 2,
+    linestyle = 2,
+    color = "grey80"
+  ) +
+  geom_line(
+    aes(x, y_pred),
+    size = 1 / 2
+  ) +
+  geom_segment(
+    aes(x, y, xend = x, yend = y_pred),
+    linetype = 1,
+    size = 1,
+    color = "red"
+  ) +
+  geom_point(
+    aes(x, y),
+    size = 3
+  ) +
+  scale_x_continuous(breaks = c(0, 1/2, 1)) +
+  scale_y_continuous(breaks = c(0, 1/2, 1)) +
+  theme_minimal() +
+  labs(
+    x = "Feature",
+    y = "Response"
+  )
+ggsave("../../fig/06_model_fit_linear_noiseless.png")
+```
+
+```{r }
+df_data %>%
+  add_predictions(fit_quad, var = "y_pred") %>%
+  ggplot() +
+  geom_line(
+    aes(x, y),
+    size = 1 / 2,
+    linestyle = 2,
+    color = "grey80"
+  ) +
+  geom_line(
+    aes(x, y_pred),
+    size = 1 / 2
+  ) +
+  geom_segment(
+    aes(x, y_meas, xend = x, yend = y_pred),
+    linetype = 1,
+    size = 1,
+    color = "red"
+  ) +
+  geom_point(
+    aes(x, y_meas),
+    size = 3
+  ) +
+  scale_x_continuous(breaks = c(0, 1/2, 1)) +
+  scale_y_continuous(breaks = c(0, 1/2, 1)) +
+  theme_minimal() +
+  labs(
+    x = "Feature",
+    y = "Response"
+  )
+ggsave("../../fig/06_model_fit_quad.png")
+```
+
+```{r }
+fit_poly <-
+  lm(
+    data = df_data,
+    formula = y_meas ~ poly(x, degree = 8)
+  )
+
+df_ref <-
+  tibble(x = seq(0, 1, length.out = 100)) %>%
+  add_predictions(fit_poly, var = "y_pred")
+
+df_data %>%
+  add_predictions(fit_poly, var = "y_pred") %>%
+  ggplot() +
+  geom_line(
+    aes(x, y),
+    size = 1 / 2,
+    linestyle = 2,
+    color = "grey80"
+  ) +
+  geom_line(
+    data = df_ref,
+    aes(x, y_pred),
+    size = 1 / 2
+  ) +
+  geom_segment(
+    aes(x, y_meas, xend = x, yend = y_pred),
+    linetype = 1,
+    size = 1,
+    color = "red"
+  ) +
+  geom_point(
+    aes(x, y_meas),
+    size = 3
+  ) +
+  scale_x_continuous(breaks = c(0, 1/2, 1)) +
+  scale_y_continuous(breaks = c(0, 1/2, 1)) +
+  theme_minimal() +
+  labs(
+    x = "Feature",
+    y = "Response"
+  )
+ggsave("../../fig/06_model_fit_overfit.png")
+```
