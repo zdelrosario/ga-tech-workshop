@@ -15,6 +15,14 @@ library(modelr)
 set.seed(101)
 n <- 10
 
+color_values <-
+  c(
+    "Truth" = "grey80",
+    "Measurement" = "black",
+    "Residual" = "deeppink",
+    "Model" = "lightslateblue"
+  )
+
 df_data <-
   tibble(x = seq(0, 1, length.out = n)) %>%
   mutate(
@@ -40,22 +48,26 @@ fit_quad <-
 df_data %>%
   ggplot() +
   geom_line(
-    aes(x, y),
+    aes(x, y, color = "Truth"),
     size = 1 / 2
   ) +
   geom_segment(
-    aes(x, y_meas, xend = x, yend = y),
+    aes(x, y_meas, xend = x, yend = y, color = "Residual"),
     linetype = 1,
-    size = 1,
-    color = "red"
+    size = 1
   ) +
   geom_point(
-    aes(x, y_meas),
+    aes(x, y_meas, color = "Measurement"),
     size = 3
   ) +
   scale_x_continuous(breaks = c(0, 1/2, 1)) +
   scale_y_continuous(breaks = c(0, 1/2, 1)) +
+  scale_color_manual(
+    name = "",
+    values = color_values
+  ) +
   theme_minimal() +
+  theme(legend.position = "bottom") +
   labs(
     x = "Feature",
     y = "Response"
@@ -67,22 +79,26 @@ ggsave("../../fig/06_model_fit_true.png")
 df_data %>%
   ggplot() +
   geom_line(
-    aes(x, y_mean),
+    aes(x, y_mean, color = "Model"),
     size = 1 / 2
   ) +
   geom_segment(
-    aes(x, y_meas, xend = x, yend = y_mean),
+    aes(x, y_meas, xend = x, yend = y_mean, color = "Residual"),
     linetype = 1,
-    size = 1,
-    color = "red"
+    size = 1
   ) +
   geom_point(
-    aes(x, y_meas),
+    aes(x, y_meas, color = "Measurement"),
     size = 3
   ) +
   scale_x_continuous(breaks = c(0, 1/2, 1)) +
   scale_y_continuous(breaks = c(0, 1/2, 1)) +
+  scale_color_manual(
+    name = "",
+    values = color_values
+  ) +
   theme_minimal() +
+  theme(legend.position = "bottom") +
   labs(
     x = "Feature",
     y = "Response"
@@ -95,28 +111,30 @@ df_data %>%
   add_predictions(fit_linear, var = "y_pred") %>%
   ggplot() +
   geom_line(
-    aes(x, y),
-    size = 1 / 2,
-    linestyle = 2,
-    color = "grey80"
+    aes(x, y, color = "Truth"),
+    size = 1 / 2
   ) +
   geom_line(
-    aes(x, y_pred),
+    aes(x, y_pred, color = "Model"),
     size = 1 / 2
   ) +
   geom_segment(
-    aes(x, y_meas, xend = x, yend = y_pred),
-    linetype = 1,
+    aes(x, y_meas, xend = x, yend = y_pred, color = "Residual"),
     size = 1,
     color = "red"
   ) +
   geom_point(
-    aes(x, y_meas),
+    aes(x, y_meas, color = "Measurement"),
     size = 3
   ) +
   scale_x_continuous(breaks = c(0, 1/2, 1)) +
   scale_y_continuous(breaks = c(0, 1/2, 1)) +
+  scale_color_manual(
+    name = "",
+    values = color_values
+  ) +
   theme_minimal() +
+  theme(legend.position = "bottom") +
   labs(
     x = "Feature",
     y = "Response"
@@ -135,28 +153,31 @@ df_data %>%
   add_predictions(fit_linear_noiseless, var = "y_pred") %>%
   ggplot() +
   geom_line(
-    aes(x, y),
+    aes(x, y, color = "Truth"),
     size = 1 / 2,
-    linestyle = 2,
-    color = "grey80"
   ) +
   geom_line(
-    aes(x, y_pred),
+    aes(x, y_pred, color = "Model"),
     size = 1 / 2
   ) +
   geom_segment(
-    aes(x, y, xend = x, yend = y_pred),
+    aes(x, y, xend = x, yend = y_pred, color = "Residual"),
     linetype = 1,
     size = 1,
     color = "red"
   ) +
   geom_point(
-    aes(x, y),
+    aes(x, y, color = "Measurement"),
     size = 3
   ) +
   scale_x_continuous(breaks = c(0, 1/2, 1)) +
   scale_y_continuous(breaks = c(0, 1/2, 1)) +
+  scale_color_manual(
+    name = "",
+    values = color_values
+  ) +
   theme_minimal() +
+  theme(legend.position = "bottom") +
   labs(
     x = "Feature",
     y = "Response"
@@ -169,28 +190,30 @@ df_data %>%
   add_predictions(fit_quad, var = "y_pred") %>%
   ggplot() +
   geom_line(
-    aes(x, y),
-    size = 1 / 2,
-    linestyle = 2,
-    color = "grey80"
+    aes(x, y, color = "Truth"),
+    size = 1 / 2
   ) +
   geom_line(
-    aes(x, y_pred),
+    aes(x, y_pred, color = "Model"),
     size = 1 / 2
   ) +
   geom_segment(
-    aes(x, y_meas, xend = x, yend = y_pred),
+    aes(x, y_meas, xend = x, yend = y_pred, color = "Residual"),
     linetype = 1,
-    size = 1,
-    color = "red"
+    size = 1
   ) +
   geom_point(
-    aes(x, y_meas),
+    aes(x, y_meas, color = "Measurement"),
     size = 3
   ) +
   scale_x_continuous(breaks = c(0, 1/2, 1)) +
   scale_y_continuous(breaks = c(0, 1/2, 1)) +
+  scale_color_manual(
+    name = "",
+    values = color_values
+  ) +
   theme_minimal() +
+  theme(legend.position = "bottom") +
   labs(
     x = "Feature",
     y = "Response"
@@ -213,29 +236,30 @@ df_data %>%
   add_predictions(fit_poly, var = "y_pred") %>%
   ggplot() +
   geom_line(
-    aes(x, y),
-    size = 1 / 2,
-    linestyle = 2,
-    color = "grey80"
+    aes(x, y, color = "Truth"),
+    size = 1 / 2
   ) +
   geom_line(
     data = df_ref,
-    aes(x, y_pred),
+    aes(x, y_pred, color = "Model"),
     size = 1 / 2
   ) +
   geom_segment(
-    aes(x, y_meas, xend = x, yend = y_pred),
-    linetype = 1,
-    size = 1,
-    color = "red"
+    aes(x, y_meas, xend = x, yend = y_pred, color = "Residual"),
+    size = 1
   ) +
   geom_point(
-    aes(x, y_meas),
+    aes(x, y_meas, color = "Measurement"),
     size = 3
   ) +
   scale_x_continuous(breaks = c(0, 1/2, 1)) +
   scale_y_continuous(breaks = c(0, 1/2, 1)) +
+  scale_color_manual(
+    name = "",
+    values = color_values
+  ) +
   theme_minimal() +
+  theme(legend.position = "bottom") +
   labs(
     x = "Feature",
     y = "Response"
