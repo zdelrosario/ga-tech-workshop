@@ -13,12 +13,11 @@ objectives:
 - "Students learn about featurizing, particularly for materials."
 keypoints:
 - "The danger zone is doing machine learning without any math or statistics knowledge!"
-- "Training a machine learning model is accomplished by tuning model parameters to minimize error on a training set."
 - "Features are facts about an observation used to inform a model. The way the model uses the features is controlled by the parameters."
-- "Hyperparameters are tunable settings in a model that are held constant during training. An example includes polynomial order."
+- "Hyperparameters are tunable settings in a model that are held constant during fitting. An example includes polynomial order."
 - "A model tends to underfit when it is not flexible enough to capture genuine trends in the data."
-- "A model tends to overfit when it is so flexible that it fits spurious patterns in the data."
-- "Cross-validation gives more accurate error estimates than naive training error, which can help with tuning hyperparameters."
+- "A model tends to overfit when it is so flexible that it fits spurious patterns in the data. Adding features makes a model more flexible."
+- "Cross-validation gives less optimistic error estimates than naive training error, which can help with tuning hyperparameters."
 - "Additional features can be computed from the 'raw' features, including polynomial terms and chemical compositions. This process is called featurization."
 ---
 
@@ -135,6 +134,46 @@ fit every data point provided.
 
 <img src="../fig/06_model_fit_overfit.png" style="width:600px;height:600px">
 
+### Adding flexibility
+<!-- ------------------------- -->
+
+One way we can add flexibility to a (regression) model is to increase the
+polynomial order. The following python code uses the scikit-learn function
+`PolynomialFeatures()` to generate polynomial features, allowing us to fit
+a quadratic (or higher order) polynomial.
+
+~~~
+import numpy as np
+from sklearn.linear_model import LinearRegression
+from sklearn.preprocessing import PolynomialFeatures
+
+## Generate data
+X = np.atleast_2d(np.linspace(0, 1, num = 10)).T
+Y = X**2
+
+## Generate polynomial features
+poly_quad  = PolynomialFeatures(2)      # Quadratic polynomial
+X_features = poly_quad.fit_transform(X) # Generate features on data
+
+## Fit the model
+regression_quad = LinearRegression().fit(X_features, Y)
+## Predict with the model
+Y_predicted = regression_quad.predict(X_features)
+
+# Note that we have to use data with the appropriate features
+# with regression_quad; this is why we must pass X_features
+# rather than the original data X
+
+## Compute the error using various metrics
+Residuals = (Y - Y_predicted)**2
+
+MSE  = np.sum(Residuals) # Mean Squared Error
+RMSE = np.sqrt(MSE)      # Root Mean Squared Error
+NDE  = RMSE / np.std(Y)  # Non-Dimensional Error
+~~~
+{: .language-python}
+
+
 ### Splitting the difference?
 <!-- ------------------------- -->
 
@@ -175,7 +214,7 @@ even though we've "correctly-specified" the model.
 
 <img src="../fig/06_model_fit_quad.png" style="width:600px;height:600px">
 
-If we were to use the true model to evaluate the MSE, we would find the
+If we were to use the true model to evaluate the residuals, we would find the
 following picture.
 
 <img src="../fig/06_model_fit_true.png" style="width:600px;height:600px">
@@ -203,6 +242,37 @@ _cross-validation_ is a good option.
 ### Estimating error with cross-validation
 <!-- ------------------------- -->
 
+[Cross-validation](https://en.wikipedia.org/wiki/Cross-validation_(statistics))
+is a family of techniques for estimating how the error in a fitted model will
+generalize to a new situation. The following graphic depicts _k-fold cross
+validation_, where we split the data into k "folds" -- disjoint subsets -- of
+data. We then proceed in k steps of fitting, where we fit the model on k-1
+folds, and _test_ the model on a _held-out_ fold. Since the test data were not
+used to fit the model, the test error tends to be a "less optimistic" estimate.
+
+<figure>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/1/1c/K-fold_cross_validation_EN.jpg" style="width:600px">
+  <figcaption>
+    Fabian Flock, via Wikimedia
+  </figcaption>
+</figure>
+
+K-folds cross-validation then provides k estimates of the error, which we may
+average or otherwise summarize. These estimates are especially valuable for
+_tuning hyperparameters_. For instance, we could fit our model at a variety of
+hyperparameter values, perform k-fold cross-validation at each setting, and
+choose the hyperparameters which minimize the estimated error. The following
+figure carries out exactly this procedure over the previous data, sweeping over
+polynomial order and carrying out 5-fold cross-validation.
+
+<img src="../fig/06_model_fit_cv.png" style="width:600px;height:600px">
+
+Note that the results are a bit ambiguous: Orders 1 through 4 are roughly
+equivalent. However, these results do suggest that picking a polynomial order
+greater than four would lead to overfitting, which is useful information.
+
+## Featurization
+<!-- -------------------------------------------------- -->
 
 ## Further Study
 <!-- -------------------------------------------------- -->
