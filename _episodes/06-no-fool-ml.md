@@ -274,6 +274,16 @@ greater than four would lead to overfitting, which is useful information.
 ## Featurization
 <!-- -------------------------------------------------- -->
 
+
+## Exercise
+<!-- -------------------------------------------------- -->
+
+> ## Exercise: Programmatic Data Operations
+>
+> Complete [06_exercise.ipynb](../files/exercises/06_exercise.ipynb)
+{: .challenge}
+
+
 ## Further Study
 <!-- -------------------------------------------------- -->
 

@@ -338,7 +338,7 @@ some of the
 
 > ## Exercise: Programmatic Data Operations
 >
-> Complete this [jupyter notebook]()
+> Complete [03_exercise.ipynb](../files/exercises/03_exercise.ipynb)
 {: .challenge}
 
 [^1]: If you were to share a script with your API key, you will have shared your
