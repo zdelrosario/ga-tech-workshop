@@ -9,9 +9,10 @@ objectives:
 - "Open the jupyter client to read notebooks"
 - "Use basic Jupyter notebook organization and functions"
 - "Create and execute code cells"
-- "Use basic python operations: variables, packages, loops, and conditionals"
+- "Use basic python operations: variables, modules, loops, and conditionals"
 keypoints:
 - "Jupyter notebooks do not open like regular files; run `jupyter notebook` from the terminal."
+- "Python is a zero-based index language."
 ---
 
 ### Python
@@ -32,11 +33,10 @@ writing and sharing Python code. Just as one could choose to write English on
 stone tablets or on paper, one could choose to write Python code in simple files
 or in *jupyter notebooks*. These notebooks are useful for a number of reasons:
 
-1. Multimedia: This document you're reading now is a jupyter notebook -- it is a
-   combination of (executable) Python code and (formatted) plain text. By
-   allowing the juxtaposition of different media (code and natural language, to
-   name a couple options), one can provide human-readable context next to
-   executable software.
+1. Multimedia: Jupyter notebooks are a combination of (executable) Python code
+   and (formatted) plain text. By allowing the juxtaposition of different media
+   (code and natural language, to name a couple options), one can provide
+   human-readable context next to executable software.
 
 2. Saves state: Jupyter notebooks *save state*, allowing you to run some code,
    save the results, close the document and come back to it later. This is
@@ -53,7 +53,7 @@ or in *jupyter notebooks*. These notebooks are useful for a number of reasons:
    facilitates scientific reproducibility.
 
 Jupyter notebooks are not *always* the best media for writing code; for
-instance, python *packages* are not written in jupyter notebooks. However, for
+instance, python *modules* are not written in jupyter notebooks. However, for
 our purposes, jupyter is a good solution.
 
 ## Working in Jupyter
@@ -156,7 +156,7 @@ are available:
 > NameError: name 'log' is not defined
 > ~~~
 > {: .output}
-> We can gain access to more operations by importing *packages*, which we'll discuss soon.
+> We can gain access to more operations by importing *modules*, which we'll discuss soon.
 {: .callout}
 
 ### Variables
@@ -402,14 +402,182 @@ materials informatics.
 ### Conditionals and logic
 <!-- ------------------------- -->
 
+Conditionals allow us to control program execution. The key building-blocks are
+`if`, `else`, and `elif`.
+
+> ## Examples
+> The `if` keyword allows its contents to run only if the input condition is `True`.
+> ~~~
+> if True:
+>     print("True")
+> ~~~
+> {: .language-python}
+>
+> We can use this switch what the program does, depending on the data.
+>
+> ~~~
+> stop = True
+> if stop:
+>     print("Stop the car!")
+> else:
+>     print("Keep driving.")
+> ~~~
+> {: .language-python}
+>
+> In python, we *must* indent after a conditional -- this is part of python's syntax.
+>
+> ~~~
+> if True:
+> print()
+> ~~~
+> {: .language-python}
+>
+> ~~~
+> IndentationError: expected an indented block
+> ~~~
+> {: .output}
+>
+> We can chain conditionals to provide alternative paths.
+>
+> ~~~
+> fruit = "banana"
+> if fruit == "apple":
+>     print("This is clearly an apple.")
+> elif fruit == "orange":
+>     print("This is clearly an orange.")
+> else:
+>     print("I have no idea what this is.")
+> ~~~
+> {: .language-python}
+{: .callout}
+
+We can also use various inequality and logical operators. The comparisons `<,
+<=, ==, >=, >` are all valid for numeric types.
+
+> ## Note
+> We need to use `==` for comparison, as `=` is used for assignment. Sometimes python
+> will catch this error for us.
+>
+> ~~~
+> x = 1
+> if x = 1:
+>     print("x is one")
+> ~~~
+> {: .language-python}
+> ~~~
+> SyntaxError: invalid syntax
+> ~~~
+> {: .output}
+{: .callout}
+
+Logical operators will allow us to chain together various statements. These
+operators include
+
+- `&` - logical `and`
+- `|` - logical `or`
+- `not` - logical `not`
+
+> ## Examples
+> ~~~
+> True & True   # True
+> True & False  # False
+> False & True  # False
+> False & False # False
+>
+> True | True   # True
+> True | False  # True
+> False | True  # True
+> False | False # False
+>
+> not True  # False
+> not False # True
+> ~~~
+> {: .language-python}
+{: .callout}
+
 ### Loops
 <!-- ------------------------- -->
+
+Loops help us to automate repetitive tasks. A `for` loop is perhaps the most
+common form of loop.
+
+> ## Examples
+> ~~~
+> for i in range(3):
+>     print(i)
+> ~~~
+> {: .language-python}
+> ~~~
+> 0
+> 1
+> 2
+> ~~~
+> {: .output}
+{: .callout}
+
+We can use loops in conjunction with lists to repeat the same action across
+multiple pieces of data. For instance, we could parse a set of telephone
+numbers.
+
+> ## Examples
+> ~~~
+> digits = [
+>     "650-255-9999",
+>     "101-255-1234",
+>     "911-911-9111"
+> ]
+> area_codes = []
+> for number in digits:
+>     area_codes.append(number[:3])
+> area_codes
+> ~~~
+> {: .language-python}
+> ~~~
+> ['650', '101', '911']
+> ~~~
+> {: .output}
+{: .callout}
 
 ### Numpy Arrays
 <!-- ------------------------- -->
 
+Numpy arrays extend the functionality of python lists. We can create a numpy
+array by importing the `numpy` module and converting a list of lists.
+
+> ## Example
+> ~~~
+> import numpy as np
+> X = np.array([
+>     [1, 2, 3],
+>     [4, 5, 6]
+> ])
+> ~~~
+> {: .language-python}
+{: .callout}
+
+Multi-dimensional arrays have multiple indices; the following schematic depicts
+how we access these different elements.
+
 <img src="../fig/python-zero-index.png" style="width:800px;">
 
+However, numpy also provides a special syntax for accessing elements.
+
+> ## Example
+> ~~~
+> X = np.array([
+>     [1, 2, 3],
+>     [4, 5, 6]
+> ])
+> print(X[:, 0]) # First column
+> print(X[0, :]) # First row
+> ~~~
+> {: .language-python}
+> ~~~
+> [1, 4]
+> [1, 2, 3]
+> ~~~
+> {: .output}
+{: .callout}
 
 [^1]: Really, you need to click once to select the cell, then double-click to start editing. You can always triple-click, though.
 
