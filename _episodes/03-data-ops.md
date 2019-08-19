@@ -38,6 +38,7 @@ on data in ways that would be challenging or impossible in spreadsheet programs.
 
 ## Application Programming Interfaces (APIs)
 <!-- -------------------------------------------------- -->
+
 An *application programming interface* (API) is a kind of [software
 link](https://www.mulesoft.com/resources/api/what-is-an-api); it provides a
 programmer with access to a server or other software service. In our case, we
@@ -63,6 +64,7 @@ account, navigate to "Account Settings" to find your API key.
 
 ### Setting up your API key
 <!-- -------------------------------------------------- -->
+
 To access Citrination, you will need to provide your API key. **However, we
 strongly discourage you from copy-pasting this key into scripts that you
 write**.[^1] Instead, we will configure your computer to store your API key in
@@ -82,6 +84,7 @@ manageable.
 
 ### Initializing the API
 <!-- -------------------------------------------------- -->
+
 After you have saved your API key and restarted your terminal, you can set about
 using your key to access Citrination. The following packages will be necessary
 to do so.

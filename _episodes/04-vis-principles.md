@@ -102,11 +102,11 @@ choices about how to display the data.
 
 __Gapminder A__: List any observations about the data you see from the first visual:
 
-<img src="../fig/04_gapminder_bad.png" style="width:600px;height:600px;">
+<img src="../fig/04_gapminder_bad.png" style="width:800px;height:800px;">
 
 __Gapminder B__: List any observations about the data you can see in the next visual:
 
-<img src="../fig/04_gapminder_standard.png" style="width:600px;height:600px;">
+<img src="../fig/04_gapminder_standard.png" style="width:800px;height:800px;">
 
 Did you make different observations using the two visualizations?
 
@@ -125,9 +125,9 @@ data. Both depict timeseries of `GDP / Capita` and `Life Expectancy at Birth`,
 but make different choices about which variable is depicted on a positional
 scale.
 
-<img src="../fig/04_gapminder_timeseries_gdp.png" style="width:600px;height:600px;">
+<img src="../fig/04_gapminder_timeseries_gdp.png" style="width:800px;height:800px;">
 
-<img src="../fig/04_gapminder_timeseries_life.png" style="width:600px;height:600px;">
+<img src="../fig/04_gapminder_timeseries_life.png" style="width:800px;height:800px;">
 
 Here it is less obvious to me which is the "better" of the two visualizations.
 In the first it is easy to see that `Australia, New Caledonia, French Polynesia,
