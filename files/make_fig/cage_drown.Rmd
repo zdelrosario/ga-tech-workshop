@@ -1,0 +1,54 @@
+---
+title: ""
+author: ""
+date:
+output:
+  github_document
+---
+
+```{r setup}
+library(tidyverse)
+
+## Via: http://tylervigen.com/view_correlation?id=359
+df_data <-
+  tribble(
+    ~year, ~deaths, ~cage_films,
+     1999,     109,           2,
+     2000,     102,           2,
+     2001,     102,           2,
+     2002,      98,           3,
+     2003,      85,           1,
+     2004,      95,           1,
+     2005,      96,           2,
+     2006,      98,           3,
+     2007,     123,           4,
+     2008,      94,           1,
+     2009,     102,           4
+  )
+```
+
+```{r vis1}
+df_data %>%
+  ggplot(aes(cage_films, deaths)) +
+  geom_point() +
+  geom_smooth(formula = y ~ x, method = "lm", se = F) +
+  theme_minimal() +
+  labs(
+    x = "Nick Cage Films (Released in Year)",
+    y = "Deaths by Drowning (in Year)"
+  )
+ggsave("../../fig/04_cage1.png")
+```
+
+```{r vis2}
+df_data %>%
+  ggplot(aes(deaths, cage_films)) +
+  geom_point() +
+  geom_smooth(formula = y ~ x, method = "lm", se = F) +
+  theme_minimal() +
+  labs(
+    x = "Deaths by Drowning (in Year)",
+    y = "Nick Cage Films (Released in Year)"
+  )
+ggsave("../../fig/04_cage2.png")
+```
