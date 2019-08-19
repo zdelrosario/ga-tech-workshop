@@ -23,7 +23,7 @@ about data that can be *catastrophic* to data entry & analysis.
 > ## A Scary Story
 > There are [numerous
 > instances](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-1044-7)
-> of Excel *automatically* converting gene names into dates or floating-point
+> of Excel *automatically* converting (biological) gene names into dates or floating-point
 > numbers. The prospect of having Excel automatically corrupt your data should be
 > reason enough to avoid doing data analysis in spreadsheet programs, at least for
 > all but the *very simplest* cases.
