@@ -253,7 +253,7 @@ illustrate some issues with casting.
 >   File "<stdin>", line 1, in <module>
 > TypeError: unsupported operand type(s) for +: 'int' and 'str'
 > ~~~
-> {. output}
+> {: .output}
 > This operation throws an error; python cannot meaningfully interpret how to add
 > an integer and a string. However, if what we really want is to insert a value into
 > a string -- say to build up a complex filename -- we can cast the value first.
@@ -298,6 +298,11 @@ Lists are used to store multiple values together. They are created with the
 We can *index* lists (and other python *iterables*) by using bracket notation.
 
 > ## Examples
+> Python is a zero-based indexed language; the "first" element has index `0`,
+> the "second" element has index `1`, and so on. It can be helpful to think
+> of the index as "the offset from the first element", so the second element
+>  is `1` away from the first. By this logic, it is reasonable that the first
+> element is `0` away from itself.
 > ~~~
 > l = [1, 2, 3]
 > l[0]
@@ -325,18 +330,22 @@ We can *index* lists (and other python *iterables*) by using bracket notation.
 We can also use *slicing* to access multiple values.
 
 > ## Examples
+> We use a `:` to denote a range of indices to return.
 > ~~~
-> l = [1, 2, 3, 4, 5]
+> l = [0, 1, 2, 3, 4]
 > l[1:3]
 > ~~~
 > {: .language-python}
 >
 > ~~~
-> [2, 3]
+> [1, 2]
 > ~~~
 > {: .output}
 >
-> Note that the first slice index is *inclusive*, while the last is *exclusive*.
+> We might have expected this to return `[1, 2, 3]`. Note that the first slice
+> index is *inclusive*, while the last is *exclusive*. We need to specify the
+> last index as one-past the element we actually want.
+>
 > We can also slice with negative indices.
 >
 > ~~~
@@ -349,7 +358,6 @@ We can also use *slicing* to access multiple values.
 > ~~~
 > {: .output}
 {: .callout}
-
 
 ### Modules
 <!-- ------------------------- -->
