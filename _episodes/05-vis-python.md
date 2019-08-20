@@ -102,7 +102,7 @@ a *histogram*, an example of which is shown below.
 
 <img src="../fig/05_hist1.png" style="width:400px;height:400px;">
 
-The histogram above uses `30` bins; the one below `20` bins. Note that different
+The histogram above uses `10` bins; the one below `20` bins. Note that different
 "features" arise in the two plots of *the same data*. The tall 'spikes' we see
 in the histogram above are sometimes called "fingers" this may -- or may not --
 be real features in the data. If real, this means values of `X` tend to
