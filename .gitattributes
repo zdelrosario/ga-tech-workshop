@@ -1,1 +1,4 @@
+# Make sure to install; pip install nbstripout
 *.ipynb filter=nbstripout
+
+*.ipynb diff=ipynb
