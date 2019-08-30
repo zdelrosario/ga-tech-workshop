@@ -67,6 +67,7 @@ In OS X or Linux, the following instructions will work:
 
 - In Terminal, type vim ~/.bash_profile (or use an editor of your choice).
 - In that file, press i (edit mode) and add the line export CITRINATION_API_KEY="your_api_key".
+  - Replace "your_api_key" with your actual API key; ensure this has no extra whitespace (spaces, tabs, etc.)
 - Save and exit (Esc, :wq, Enter).
 - Open up a new Terminal and load this notebook one more time.
 
