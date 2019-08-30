@@ -63,6 +63,23 @@ write**. Instead, we will configure your computer to store your API key in an
 operating system-wide variable, and write our scripts to load that variable.
 This section will describe how to do this.
 
+First, log into Citrination, and click on `Account Settings` to find your API
+key. Copy this, and follow either of the Two Options listed below.
+
+<img src="../fig/find_api_key.png" style="width:400px;">
+
+### Simple option: Text file
+Create a text (.txt) file *in the same folder as your workshop files* with the
+name `api.txt`. In this file, paste your API key. This value will be loaded by
+the workshop exercises, and will allow you to access Citrination.
+
+- In Windows, you can do this with Notepad
+- In Mac OSX, you can use TextExit; make sure to enable plain text
+  - Format > Make Plain Text; OR
+  - press Command + Shift + T
+- In Linux, you can use whatever you want (vim, emacs, nano, you got this)
+
+### Advanced option: Environment variable
 In OS X or Linux, the following instructions will work:
 
 - In Terminal, type vim ~/.bash_profile (or use an editor of your choice).
