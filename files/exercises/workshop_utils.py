@@ -1,8 +1,29 @@
-import pandas as pd
 import numpy as np
+import os
+import pandas as pd
 import re
+
 from pypif_sdk.readview import ReadView
 from functools import reduce
+
+## API Key Setup
+##################################################
+# Automates loading a Citrination API key
+def getAPIKey(evar = "CITRINATION_API_KEY", filename = "./api.txt"):
+    # Try environment variable first
+    res = os.environ.get(evar)
+    if res is not None:
+        print("Loaded environment variable {0:}".format(evar))
+    # Fallback to text file
+    else:
+        print("Environment variable {0:} not found, searching for {1:}...".format(
+            evar,
+            filename
+        ))
+        with open(filename, "r") as myfile:
+            res = myfile.readline().strip()
+
+    return res
 
 ## Parsing
 ##################################################
