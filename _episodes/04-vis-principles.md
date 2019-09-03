@@ -100,11 +100,15 @@ The following figures use data from the [Gapminder](https://www.gapminder.org/)
 project. Both figures depict the same data and variables, but make different
 choices about how to display the data.
 
-__Gapminder A__: List any observations about the data you see from the first visual:
+__Gapminder A__: How are the variables `Population, GDP per Capita, Life
+Expectancy at Birth, Continent` encoded visually? List any observations about
+the data you see from the first visual:
 
 <img src="../fig/04_gapminder_bad.png" style="width:800px;height:800px;">
 
-__Gapminder B__: List any observations about the data you can see in the next visual:
+__Gapminder B__: How are the variables `Population, GDP per Capita, Life
+Expectancy at Birth, Continent` encoded visually? List any observations about
+the data you can see in the next visual:
 
 <img src="../fig/04_gapminder_standard.png" style="width:800px;height:800px;">
 
@@ -115,6 +119,8 @@ Birth` is generally lower for African counteries, the pattern is quite a bit
 more difficult to make out using a color scale, as opposed to a common
 positional scale. It is also clearer from Gapminder B that there is an observed
 (positive) correlation between `GDP / Capita` and `Life Expectancy at Birth`.
+Version `B` is actually how the Gapminder project folks choose to [present their
+own data](https://www.gapminder.org/tools/#$chart-type=bubbles).
 
 Note that `Continent` takes only 5 discrete values; it is easy to find 5 colors
 that stand apart well. I believe that Gapminder B above is the more effective
