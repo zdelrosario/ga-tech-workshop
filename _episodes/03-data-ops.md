@@ -284,7 +284,7 @@ df_simple["X1"] == 0
 ~~~
 [True, False, True, False]
 ~~~
-{: .language-bas}
+{: .language-python}
 
 We can *chain* these operations to filter rows that correspond to particular criteria:
 

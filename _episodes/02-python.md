@@ -144,6 +144,7 @@ are available:
 > ~~~
 > 1
 > ~~~
+> {: .output}
 > Some operations are not available by default
 > ~~~
 > log(10)
