@@ -2,9 +2,11 @@ import numpy as np
 import os
 import pandas as pd
 import re
+import matplotlib.pyplot as plt
 
 from pypif_sdk.readview import ReadView
 from functools import reduce
+from sklearn.linear_model import LinearRegression
 
 ## API Key Setup
 ##################################################
@@ -31,8 +33,6 @@ def getAPIKey(evar = "CITRINATION_API_KEY", filename = "./api.txt"):
 def ddir(object):
     return list(filter(lambda s: s[0] != "_", dir(object)))
 
-## Parsing
-##################################################
 # Get a PIF scalar
 def parsePifKey(pif, key):
     """Parse a single pif key for single scalar values;
@@ -173,3 +173,79 @@ def formulas2df(formulas):
         df_composition = df_composition.fillna(0)
 
     return df_composition
+
+## Sequential Learning Simulator
+##################################################
+def sequentialLearningSimulator(X, Y, n_init = 50, n_iter = 40):
+    """Perform simulated sequential learning on a given dataset
+
+    :param X: Feature dataset
+    :type X: numpy array
+    :param Y: Response dataset
+    :type Y: numpy array
+    :param acq: acquisition strategy
+    :returns: acquisition history
+    :rtype: numpy array
+    """
+    n_repl = 50 # Replications
+    np.random.seed(101)
+
+    n_total = Y.shape[0]
+
+    acq_history = np.zeros((n_repl, n_iter + n_init))
+    ind_all = range(n_total)
+
+    ## Replication loop
+    for ind in range(n_repl):
+        ## Random initial selection
+        ind_train = np.random.choice(n_total, n_init, replace = False)
+        acq_history[ind, :n_init] = ind_train
+
+        ## Iteration loop
+        for jnd in range(n_iter):
+            ## Train model
+            reg = LinearRegression().fit(X[ind_train], Y[ind_train])
+
+            ## Predict on test data
+            ind_test    = np.setxor1d(ind_all, ind_train)
+            Y_pred_test = reg.predict(X[ind_test])
+
+            ## Select best candidate
+            ind_best = ind_test[np.argmax(Y_pred_test)]
+
+            ## Record and advance
+            ind_train = np.concatenate((ind_train, [ind_best]))
+            acq_history[ind, n_init + jnd] = ind_best
+
+    return acq_history
+
+def plotHistory(acq_history, Y, n_init = 20):
+    """Plot the results of a sequential learning simulation
+
+    :param acq_history: Output from sequentialLearningSimulator()
+    :type acq_history: numpy array
+    :param Y: Response values
+    :param n_init: Number of initial candidates
+    :type n_init: integer
+    :type Y: numpy array
+    """
+    n_iter = acq_history.shape[1] - n_init
+
+    Y_hist = np.array([Y[acq_history[i, :]] for i in range(acq_history.shape[0])])
+    ## Average the initial points
+    Y_hist = np.concatenate(
+        (np.atleast_2d(np.mean(Y_hist[:, :n_init], axis = 1)).T, Y_hist[:, n_init:]),
+        axis = 1
+    )
+    ## Average over replications
+    Y_mean    = np.mean(Y_hist, axis = 0)
+    Y_median  = np.median(Y_hist, axis = 0)
+    Y_upper   = np.quantile(Y_hist, 0.9, axis = 0)
+    Iter      = np.arange(n_iter + 1)
+
+    plt.figure()
+    # for ind in range(acq_history.shape[0]):
+    #     plt.plot(Iter, Y_hist[ind, :], 'b-', alpha = 1 / 4)
+    plt.plot(Iter, Y_upper, 'k--', label = "Q90")
+    plt.plot(Iter, Y_median, 'k-', linewidth = 3, label = "Median")
+    plt.legend(loc = 0)
