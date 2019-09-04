@@ -50,6 +50,9 @@ for id_worksheet in range(len(nb_orig["worksheets"])):
         elif cell_orig["cell_type"] == "heading":
             assignment_text = ""
             solution_text   = ""
+        elif cell_orig["cell_type"] == "raw":
+            assignment_text = ""
+            solution_text   = ""
         else:
             raise ValueError("Unrecognized cell type {}".format(cell_orig["cell_type"]))
 
@@ -118,6 +121,11 @@ for id_worksheet in range(len(nb_orig["worksheets"])):
             nb_solution["worksheets"][id_worksheet]["cells"][id_cell]["input"] = \
                 solution_text
         elif cell_orig["cell_type"] == "heading":
+            nb_assignment["worksheets"][id_worksheet]["cells"][id_cell]["source"] = \
+                cell_orig["source"]
+            nb_solution["worksheets"][id_worksheet]["cells"][id_cell]["source"] = \
+                cell_orig["source"]
+        elif cell_orig["cell_type"] == "raw":
             nb_assignment["worksheets"][id_worksheet]["cells"][id_cell]["source"] = \
                 cell_orig["source"]
             nb_solution["worksheets"][id_worksheet]["cells"][id_cell]["source"] = \
