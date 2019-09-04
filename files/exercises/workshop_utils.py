@@ -8,6 +8,9 @@ from pypif_sdk.readview import ReadView
 from functools import reduce
 from sklearn.linear_model import LinearRegression
 
+# Set multiple functions' default value
+N_INIT = 20
+
 ## API Key Setup
 ##################################################
 # Automates loading a Citrination API key
@@ -176,7 +179,13 @@ def formulas2df(formulas):
 
 ## Sequential Learning Simulator
 ##################################################
-def sequentialLearningSimulator(X, Y, n_init = 50, n_iter = 40):
+def sequentialLearningSimulator(
+        X, Y,
+        n_init = N_INIT,
+        n_iter = 40,
+        n_repl = 50,
+        model  = LinearRegression()
+):
     """Perform simulated sequential learning on a given dataset
 
     :param X: Feature dataset
@@ -187,7 +196,6 @@ def sequentialLearningSimulator(X, Y, n_init = 50, n_iter = 40):
     :returns: acquisition history
     :rtype: numpy array
     """
-    n_repl = 50 # Replications
     np.random.seed(101)
 
     n_total = Y.shape[0]
@@ -204,7 +212,7 @@ def sequentialLearningSimulator(X, Y, n_init = 50, n_iter = 40):
         ## Iteration loop
         for jnd in range(n_iter):
             ## Train model
-            reg = LinearRegression().fit(X[ind_train], Y[ind_train])
+            reg = model.fit(X[ind_train], Y[ind_train])
 
             ## Predict on test data
             ind_test    = np.setxor1d(ind_all, ind_train)
@@ -219,33 +227,39 @@ def sequentialLearningSimulator(X, Y, n_init = 50, n_iter = 40):
 
     return acq_history
 
-def plotHistory(acq_history, Y, n_init = 20):
+def plotHistory(acq_history, Y, label, n_init = N_INIT, color = "black"):
     """Plot the results of a sequential learning simulation
 
     :param acq_history: Output from sequentialLearningSimulator()
     :type acq_history: numpy array
     :param Y: Response values
+    :param label: Text label for plotted history
+    :type label: string
     :param n_init: Number of initial candidates
     :type n_init: integer
+    :param color: Color for plotted history
+    :type color: string
     :type Y: numpy array
     """
     n_iter = acq_history.shape[1] - n_init
-
     Y_hist = np.array([Y[acq_history[i, :]] for i in range(acq_history.shape[0])])
+
+    max_value   = np.max(Y)
+
     ## Average the initial points
     Y_hist = np.concatenate(
         (np.atleast_2d(np.mean(Y_hist[:, :n_init], axis = 1)).T, Y_hist[:, n_init:]),
         axis = 1
     )
-    ## Average over replications
-    Y_mean    = np.mean(Y_hist, axis = 0)
-    Y_median  = np.median(Y_hist, axis = 0)
-    Y_upper   = np.quantile(Y_hist, 0.9, axis = 0)
+    ## Take cumulative maximum
+    Y_max = np.maximum.accumulate(Y_hist, axis = 1)
+    ## Statistics over replications
+    Y_mean    = np.mean(Y_max, axis = 0)
+    Y_median  = np.median(Y_max, axis = 0)
+    Y_upper   = np.quantile(Y_max, 0.9, axis = 0)
     Iter      = np.arange(n_iter + 1)
 
-    plt.figure()
-    # for ind in range(acq_history.shape[0]):
-    #     plt.plot(Iter, Y_hist[ind, :], 'b-', alpha = 1 / 4)
-    plt.plot(Iter, Y_upper, 'k--', label = "Q90")
-    plt.plot(Iter, Y_median, 'k-', linewidth = 3, label = "Median")
+    plt.plot(Iter, [max_value] * (n_iter + 1), "k:")
+    # Median of maxes
+    plt.plot(Iter, Y_median, color = color, linewidth = 3, label = label)
     plt.legend(loc = 0)
