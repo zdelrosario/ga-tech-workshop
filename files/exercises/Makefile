@@ -21,6 +21,9 @@ ${pre04}: ${pre04}_master.ipynb
 ${pre05}: ${pre05}_master.ipynb
 	./sep.py ${pre05}_master.ipynb ${pre05}_exercise.ipynb ${pre05}_solution.ipynb
 
+strip:
+	nbstripout *.ipynb
+
 clean:
 	rm ${pre01}_exercise.ipynb ${pre01}_solution.ipynb
 	rm ${pre02}_exercise.ipynb ${pre02}_solution.ipynb
