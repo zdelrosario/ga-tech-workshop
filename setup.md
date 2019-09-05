@@ -66,7 +66,7 @@ This section will describe how to do this.
 First, log into Citrination, and click on `Account Settings` to find your API
 key. Copy this, and follow either of the Two Options listed below.
 
-<img src="../fig/find_api_key.png" style="width:400px;">
+<img src="./fig/find_api_key.png" style="width:400px;">
 
 ### Simple option: Text file
 Create a text (.txt) file *in the same folder as your workshop files* with the
@@ -78,6 +78,12 @@ the workshop exercises, and will allow you to access Citrination.
   - Format > Make Plain Text; OR
   - press Command + Shift + T
 - In Linux, you can use whatever you want (vim, emacs, nano, you got this)
+
+Note that this is a **simplified** way to provide your API key to the workshop
+materials. In practice, we recommend the following advanced option when doing
+any kind of serious work. **While it is not required for you to use the advanced
+option for this workshop, we strongly suggest you get the following working
+before doing any serious work with your API key.**
 
 ### Advanced option: Environment variable
 In OS X or Linux, the following instructions will work:
