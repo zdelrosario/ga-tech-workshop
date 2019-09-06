@@ -1,16 +1,19 @@
 ---
 title: "Principles of Visualization"
 teaching: 0
-exercises: 30
+exercises: 50
 questions:
+- "How are numbers displayed visually?"
 - "How do we design _effective_ visualizations?"
 objectives:
-- "Use _The Visual Hierarchy_ to assess visualizations"
+- "Learn the ways to display numbers visually."
+- "Use the _visual hierarchy_ to assess visualizations."
 keypoints:
 - "Approaches higher on _The Visual Hierarchy_ tend to be more effective at displaying data accurately."
 - "Consider reserving your x- and y-axes for the _most important_ variables."
 - "Consider using color to depict discrete variables with few levels."
 - "Try __many__ visualizations of the same data before settling on one."
+- "Which is the 'most important' variable depends on the context and intended use of the graph."
 ---
 
 In this lesson, we will illustrate different methods of visualizing information,
@@ -131,7 +134,11 @@ data. Both depict timeseries of `GDP / Capita` and `Life Expectancy at Birth`,
 but make different choices about which variable is depicted on a positional
 scale.
 
+__Timeseries 1__:
+
 <img src="../fig/04_gapminder_timeseries_gdp.png" style="width:800px;height:800px;">
+
+__Timeseries 2__:
 
 <img src="../fig/04_gapminder_timeseries_life.png" style="width:800px;height:800px;">
 

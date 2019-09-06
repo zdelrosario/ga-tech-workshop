@@ -423,7 +423,7 @@ plt.close()
 
 > ## Exercise: Plot This
 >
-> Complete [05_exercise.ipynb](../files/exercises/05_exercise.ipynb)
+> Complete [04_vis_exercise.ipynb](../files/exercises/04_vis_exercise.ipynb)
 {: .challenge}
 
 [^1]: This is *literally* called a [magic function](https://stackoverflow.com/questions/43027980/purpose-of-matplotlib-inline/43028034), and is necessary to tell jupyter how to handle matplotlib figures. The version we use is one of the simpler options.

@@ -67,7 +67,7 @@ command `jupyer notebook` to launch jupyter.
 <img src="../fig/02_launch_jupyter.png" style="width:500px;">
 
 Once you launch jupyter, you should see a page like the following. Click on
-`01_exercise.ipynb` to open the notebook associated with this lesson. For your
+`01_python_exercise.ipynb` to open the notebook associated with this lesson. For your
 reference, you can also click `New` to create a new notebook.
 
 <img src="../fig/02_jupyter_browser.png" style="width:800px;">
@@ -581,5 +581,10 @@ However, numpy also provides a special syntax for accessing elements.
 {: .callout}
 
 [^1]: Really, you need to click once to select the cell, then double-click to start editing. You can always triple-click, though.
+
+> ## Exercise: Python and Jupyter
+>
+> Complete [01_python_exercise.ipynb](../files/exercises/01_python_exercise.ipynb)
+{: .challenge}
 
 {% include links.md %}
