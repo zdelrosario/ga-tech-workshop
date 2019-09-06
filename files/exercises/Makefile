@@ -28,6 +28,17 @@ ${pre06}: ${pre06}_master.ipynb
 strip:
 	nbstripout *.ipynb
 
+pack:
+	zip exercises.zip \
+	${pre01}_exercise.ipynb \
+	${pre02}_exercise.ipynb \
+	${pre03}_exercise.ipynb \
+	${pre04}_exercise.ipynb \
+	${pre05}_exercise.ipynb \
+	${pre06}_exercise.ipynb \
+	workshop_utils.py \
+	data/*
+
 clean:
 	rm ${pre01}_exercise.ipynb ${pre01}_solution.ipynb
 	rm ${pre02}_exercise.ipynb ${pre02}_solution.ipynb
