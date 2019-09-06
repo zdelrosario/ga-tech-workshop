@@ -16,11 +16,37 @@ keypoints:
 - "Which is the 'most important' variable depends on the context and intended use of the graph."
 ---
 
-In this lesson, we will illustrate different methods of visualizing information,
-and rank them according to _the visual hierarchy_.
+## An Exercise
+<!-- -------------------------------------------------- -->
+
+Now we're going to take a break from coding and do a short activity on the
+*principles of visualization*.
+
+**Instructions:** Organize yourselves into pairs. The workshop facilitators will
+give each pair a packet of *6 cards*. These cards are visualizations of the same
+data -- the. Use these cards to answer the following three questions:
+
+---
+### Q1: How is `Count` displayed?
+---
+### Q2: Which is larger? The `Count` of `wagons` with `fwd drive`, OR the `Count` of `wagons` with `rwd drive`? By how much?
+---
+### Q3: Rank the six visualizations in terms of how well they help you answer Q2. Rank the *most helpful* as `1`, and the *least helpful* as `6`.
+---
+
+<br>
+<br>
+<br>
+
+(If you're reading along during the exercise, don't go past this point until the
+exercise is over!)
 
 ## The Visual Hierarchy
 <!-- -------------------------------------------------- -->
+
+In this lesson, we will illustrate different methods of visualizing information,
+and rank them according to _the visual hierarchy_.
+
 The visual hierarchy was proposed by Cleveland and McGill in 1985.[^1] The
 concept is that certain *perceptual tasks* -- small components of interpreting
 graphics -- lead to more or less accurate interpretations of data. More accurate
