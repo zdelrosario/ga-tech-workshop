@@ -1,0 +1,1469 @@
+[
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "13.6"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Li1F1"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "9.33"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Li1Cl1"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "7.95"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Li1Br1"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "1"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Li3Sb1"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "6"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Li1I1"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "0.7"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Li3Bi1"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "10.39"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Be1O1"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "4.17"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Be1S1"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "3.61"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Be1Se1"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "0.67"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Be3Sb2"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "2.89"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Be1Te1"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "0.93"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "B1"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "8"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "B1N1"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "7"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "B2O3"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "2"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "B1P1"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "1.46"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "B1As1"
+    },
+    {
+        "category": "system.chemical",
+        "chemicalFormula": "B2Se3"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "2.6"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "B1Sb1"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "5.47"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "C"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "3.7"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "C1Br4"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "2.26"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "C1I4"
+    },
+    {
+        "category": "system.chemical",
+        "chemicalFormula": "NaN"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "10.5"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Na1F1"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "2.4"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Na2S1"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "8.97"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Na1Cl1"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "2"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Na2Se1"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "7.5"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Na1Br1"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "1.1"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Na3Sb1"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "2.3"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Na2Te1"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "5.89"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Na1I1"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "7.77"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Mg1O1"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "11.8"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Mg1F2"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "0.6"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Mg2Si1"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "1.4"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Mg3P2"
+    },
+    {
+        "category": "system.chemical",
+        "chemicalFormula": "Mg1Cl1"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "0.532"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Mg2Ge1"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "2.55"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Mg3As2"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "5.6"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Mg1Se1"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "0.135"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Mg2Sn1"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "0.82"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Mg3Sb2"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "4.7"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Mg1Te1"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "0.041"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Mg2Pb1"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "0.1"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Mg3Bi2"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "0.82"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Al1B1"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "5.74"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Al1N1"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "9.5"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Al2O3"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "2.45"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Al1P1"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "4.1"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Al2S3"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "2.1"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Al1As1"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "3.1"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Al2Se3"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "1.62"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Al1Sb1"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "2.5"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Al2Te3"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "0.4"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Al1Bi1"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "2.2"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Si1C1"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "5"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Si3N4"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "11"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Si1O2"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "1.12"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Si"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "1.89"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Si1P2"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "1.45"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Si1As1"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "1.72"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Si1Se2"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "0.59"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Si1Sn1"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "1.98"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Si2Te3"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "1.85"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Si1Te2"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "0.33"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "P"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "0.23"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "P1As1"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "3.82"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "S"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "10.9"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "K1F1"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "2.1"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "K2S1"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "8.5"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "K1Cl1"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "1.8"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "K2Se1"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "7.6"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "K1Br1"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "1.8"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "K3Sb1"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "1.9"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "K2Te1"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "6.17"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "K1I1"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "4.5"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Ca1B6"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "7.7"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Ca1O1"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "10"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Ca1F2"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "1.9"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Ca2Si1"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "6.0"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Ca1S1"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "4.87"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Ca1Se1"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "0.9"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Ca2Sn1"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "4.07"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Ca1Te1"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "5.98"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Ca1I2"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "0.46"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Ca2Pb1"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "2.6"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Sc1N1"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "6"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Sc2O3"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "2"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Sc2S3"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "0.3"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Ti1C0.9"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "0.04"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Ti2O3"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "3"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Ti1O2"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "1.24"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Ti1S2"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "0.3"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Ti2S3"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "0.9"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Ti1S3"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "0.69"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Ti1Se2"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "1"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "Ti1Te2"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "0.3"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "V1O1"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "0.1"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "V2O3"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "2.34"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "V2O5"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "0.65"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "V1O2"
+    },
+    {
+        "properties": [
+            {
+                "name": "Band gap",
+                "scalars": [
+                    {
+                        "value": "0.66"
+                    }
+                ],
+                "units": "eV"
+            }
+        ],
+        "category": "system.chemical",
+        "chemicalFormula": "V2O4"
+    }
+]
