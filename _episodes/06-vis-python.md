@@ -104,8 +104,8 @@ a *histogram*, an example of which is shown below.
 
 The histogram above uses `10` bins; the one below `20` bins. Note that different
 "features" arise in the two plots of *the same data*. The tall 'spikes' we see
-in the histogram above are sometimes called "fingers" this may -- or may not --
-be real features in the data. If real, this means values of `X` tend to
+in the histogram above are sometimes called "fingers". These may -- or may not
+-- be real features in the data. If real, this means values of `X` tend to
 concentrate around that value. Unless you change the bin size (equivalently, the
 count) to check if these features persist across *arbitrary plotting choices*,
 you **cannot** be sure these features actually exist.
