@@ -36,9 +36,10 @@ pack:
 	${pre04}_exercise.ipynb \
 	${pre05}_exercise.ipynb \
 	${pre06}_exercise.ipynb \
+	check_install.ipynb \
 	workshop_utils.py \
 	data/* \
-	incl/*
+	incl/* 
 
 clean:
 	rm ${pre01}_exercise.ipynb ${pre01}_solution.ipynb
