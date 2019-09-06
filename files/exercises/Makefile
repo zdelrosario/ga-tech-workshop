@@ -1,10 +1,11 @@
-pre01=01
-pre02=02
-pre03=03
-pre04=04
-pre05=05
+pre01=01_python
+pre02=02_pycc
+pre03=03_data
+pre04=04_vis
+pre05=05_ml
+pre06=06_sl
 
-main: ${pre01} ${pre02} ${pre03} ${pre04} ${pre05}
+main: ${pre01} ${pre02} ${pre03} ${pre04} ${pre05} ${pre06}
 
 ${pre01}: ${pre01}_master.ipynb
 	./sep.py ${pre01}_master.ipynb ${pre01}_exercise.ipynb ${pre01}_solution.ipynb
@@ -21,6 +22,9 @@ ${pre04}: ${pre04}_master.ipynb
 ${pre05}: ${pre05}_master.ipynb
 	./sep.py ${pre05}_master.ipynb ${pre05}_exercise.ipynb ${pre05}_solution.ipynb
 
+${pre06}: ${pre06}_master.ipynb
+	./sep.py ${pre06}_master.ipynb ${pre06}_exercise.ipynb ${pre06}_solution.ipynb
+
 strip:
 	nbstripout *.ipynb
 
@@ -30,3 +34,4 @@ clean:
 	rm ${pre03}_exercise.ipynb ${pre03}_solution.ipynb
 	rm ${pre04}_exercise.ipynb ${pre04}_solution.ipynb
 	rm ${pre05}_exercise.ipynb ${pre05}_solution.ipynb
+	rm ${pre06}_exercise.ipynb ${pre06}_solution.ipynb

@@ -29,13 +29,11 @@ else:
     if len(sys.argv) > 2:
         filename_assignment = sys.argv[2]
     else:
-        # filename_assignment = "assignment.ipynb"
-        filename_assignment = sub_or_switch(filename_orig, "assignment")
+        filename_assignment = sub_or_switch(filename_orig, "exercise")
 
     if len(sys.argv) > 3:
         filename_solution = sys.argv[3]
     else:
-        # filename_solution = "solution.ipynb"
         filename_solution = sub_or_switch(filename_orig, "solution")
 
 ## Load the notebook
