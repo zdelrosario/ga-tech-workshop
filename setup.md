@@ -43,16 +43,10 @@ following commands.
 ## Exercises Files
 <!-- ------------------------- -->
 
-We will work through a number of programming exercises in this workshop. Click
-the links below to download all of the required files. You can place these files
-in whatever directory you prefer, *but make sure they are all in the same
-folder*.
+We will work through a number of programming exercises in this workshop. We have
+consolidated the exercise notebooks in a single zip; download this and unzip.
 
-- [Utilities](../files/exercises/workshop_utils.py) - Workshop utilities
-- [Exercise 01](../files/exercises/01_exercise.ipynb) - Exercise notebook
-- [Exercise 02](../files/exercises/02_exercise.ipynb) - Exercise notebook
-- [Exercise 03](../files/exercises/03_exercise.ipynb) - Exercise notebook
-- [Exercise 04](../files/exercises/04_exercise.ipynb) - Exercise notebook
+- [Exercises](../files/exercises/exercises.zip) - Zipped files
 
 ## API Key Setup
 <!-- -------------------------------------------------- -->
@@ -108,6 +102,7 @@ run the following jupyter notebook.
 >
 > Download and run
 > [check_install.ipynb](../files/exercises/check_install.ipynb).
+> This is also included in the `exercises.zip` file above.
 >
 > Navigate to the folder where you downloaded `check_install.ipynb`,
 > execute the command `jupyter notebook`, open `check_install.ipynb`,
