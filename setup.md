@@ -46,7 +46,7 @@ following commands.
 We will work through a number of programming exercises in this workshop. We have
 consolidated the exercise notebooks in a single zip; download this and unzip.
 
-- [Exercises](../files/exercises/exercises.zip) - Zipped files
+- [Exercises](https://github.com/CitrineInformatics/ga-tech-workshop/raw/master/files/exercises/exercises.zip) - Zipped files
 
 ## API Key Setup
 <!-- -------------------------------------------------- -->
@@ -101,7 +101,7 @@ run the following jupyter notebook.
 > ## Test your installation
 >
 > Download and run
-> [check_install.ipynb](../files/exercises/check_install.ipynb).
+> [check_install.ipynb](https://github.com/CitrineInformatics/ga-tech-workshop/raw/master/files/exercises/check_install.ipynb).
 > This is also included in the `exercises.zip` file above.
 >
 > Navigate to the folder where you downloaded `check_install.ipynb`,
