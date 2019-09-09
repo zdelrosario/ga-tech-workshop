@@ -6,8 +6,9 @@ questions:
 - "What is sequential learning?"
 objectives:
 - "Students design a machine learning model for sequential learning on materials science data."
+- "Students learn about featurizing, particularly for materials."
 keypoints:
-- ""
+- "Additional features can be computed from the 'raw' features, including polynomial terms and chemical compositions. This process is called featurization."
 ---
 
 ![Sequential learning schematic](../../fig/sequential-learning.png)

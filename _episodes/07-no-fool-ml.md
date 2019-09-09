@@ -10,7 +10,6 @@ objectives:
 - "Students fit machine learning models using scikit-learn."
 - "Students learn about underfitting and overfitting."
 - "Students use cross-validation to support hyperparameter tuning."
-- "Students learn about featurizing, particularly for materials."
 keypoints:
 - "The danger zone is doing machine learning without any math or statistics knowledge!"
 - "Features are facts about an observation used to inform a model. The way the model uses the features is controlled by the parameters."
@@ -18,7 +17,6 @@ keypoints:
 - "A model tends to underfit when it is not flexible enough to capture genuine trends in the data."
 - "A model tends to overfit when it is so flexible that it fits spurious patterns in the data. Adding features makes a model more flexible."
 - "Cross-validation gives less optimistic error estimates than naive training error, which can help with tuning hyperparameters."
-- "Additional features can be computed from the 'raw' features, including polynomial terms and chemical compositions. This process is called featurization."
 ---
 
 [Drew Conway](http://drewconway.com/zia/2013/3/26/the-data-science-venn-diagram)
