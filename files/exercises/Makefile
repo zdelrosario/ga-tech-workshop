@@ -5,7 +5,12 @@ pre04=04_vis
 pre05=05_ml
 pre06=06_sl
 
-main: ${pre01} ${pre02} ${pre03} ${pre04} ${pre05} ${pre06}
+main:
+	make ex
+	make strip
+	make pack
+
+ex: ${pre01} ${pre02} ${pre03} ${pre04} ${pre05} ${pre06}
 
 ${pre01}: ${pre01}_master.ipynb
 	./sep.py ${pre01}_master.ipynb ${pre01}_exercise.ipynb ${pre01}_solution.ipynb
