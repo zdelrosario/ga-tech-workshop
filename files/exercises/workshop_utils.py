@@ -263,3 +263,248 @@ def plotHistory(acq_history, Y, label, n_init = N_INIT, color = "black"):
     # Median of maxes
     plt.plot(Iter, Y_median, color = color, linewidth = 3, label = label)
     plt.legend(loc = 0)
+
+
+## Data cleaning workshop helpers
+##################################################
+def create_mapping_from_table(header_csv):
+    '''
+    This function takes a CSV file defining header abbreviations and creates
+    a dictionary mapping the abbreviation to the full name in a way that is
+    commensurate with the Citrine CSV Template Ingester.
+
+    :param header_csv: A string filepath to the CSV file.
+    :return mapping: A dictionary mapping abbreviation to full name.
+    '''
+    mapping = {}
+    df = pd.read_csv(header_csv)
+
+    # Read each row of the df
+    for index, row in df.iterrows():
+        # Check for composition column; keep as is
+        if row['Details'].startswith('%'):
+            mapping[row['Abbreviation']] = 'ACTUAL COMPOSITION: {} (wt %)'.format(
+                row['Abbreviation'])
+
+        # Otherwise it's a Property name
+        else:
+            mapping[row['Abbreviation']] = 'PROPERTY: {}'.format(row['Details'])
+
+    print('Mapping dictionary successfully created.')
+    return mapping
+
+
+def rename_columns_in_df(df, mapping):
+    '''
+    This function takes a DataFrame with abbreviated header names and renames
+    the columns.
+
+    :param df: A pandas DataFrame with the data and abbreviated column names.
+    :param mapping: A dictionary mapping abbreviated to detailed names.
+    :return df: A pandas DataFrame with the columns renamed.
+    '''
+    # Create new column names from supplied mapping by adding to empty list
+    new_cols = []
+    for abbreviation in list(df):
+        new_cols.append(mapping[abbreviation])
+
+    # Change the columns of the DataFrame to the new names
+    df.columns = new_cols
+    print('Columns are renamed and the DataFrame is saved to a new CSV file.')
+    return df
+
+
+def add_iron_composition(df):
+    '''
+    This function takes a DataFrame with alloy elements and adds a column for
+    the weight percent of iron, the base metal.
+
+    :param df: A pandas DataFrame missing composition of iron.
+    :return df: A pandas DataFrame with composition of iron added in a new column.
+    '''
+    # Get only the columns that have composition
+    # This called a "list comprehension" and it's a powerful Python paradigm
+    comp_cols = [col for col in list(df) if 'ACTUAL COMP' in col]
+    df_ = df[comp_cols]
+
+    # Sum across columns
+    col_sum = df_.sum(axis=1)
+
+    # Compute iron composition as 100 - sum
+    iron_comp = col_sum.mul(-1).add(100)
+
+    # Add the composition as a new column to the DataFrame
+    df['ACTUAL COMPOSITION: Fe (wt %)'] = iron_comp
+    print('Iron composition column was added to the dataset.')
+    return df
+
+
+def add_chemical_formula(df):
+    '''
+    This function takes in a pandas DataFrame and adds a column for the
+    chemical formula by combining the constituent compositions.
+
+    :param df: A pandas DataFrame with compositions and missing a formula.
+    :return df: A pandas DataFrame with chemical formula added in a new column.
+    '''
+    # Get only the columns that have composition
+    comp_cols = [col for col in list(df) if 'ACTUAL COMP' in col]
+    df_ = df[comp_cols]
+
+    # Generate a list of chemical formulas
+    formulas_list = []
+    for index, row in df_.iterrows():
+        # Loop through the compositions and add to the formula
+        formula = ''
+        for col in comp_cols:
+            # Only add the element if it has a non-zero composition
+            if row[col] > 1e-3:
+                # A little complicated to account for floats to string conversion
+                formula += col.split(' ')[2] + '{0:.5f}'.format(row[col]/100).rstrip('0')
+
+        formulas_list.append(formula)
+
+    # Add the chemical formula as a new column
+    df['FORMULA'] = formulas_list
+    print('Chemical formula column was added to the dataset.')
+    return df
+
+
+def fix_fatigue_strength(df):
+    '''
+    This function takes in a pandas DataFrame and multiplies cells where the
+    Fatigue Strength is too small by 1000.
+
+    :param df: A pandas DataFrame with erroneous values for Fatigue Strength.
+    :return df: A pandas DataFrame with corrected values.
+    '''
+    prop_name = 'PROPERTY: Fatigue Strength'
+    for index, row in df.iterrows():
+        if row[prop_name] < 10.0:
+            df.at[index, prop_name] *= 1000
+    print('{} values have been corrected.'.format(prop_name))
+    return df
+
+
+def csv_to_pifs(df, fpath):
+    '''
+    This function takes in a pandas DataFrame and filepath writes a PIF
+    with the data from the DataFrame to the filepath.
+
+    :param df: A pandas DataFrame with cleaned data.
+    :return: None
+    '''
+    # Create empty list to store ChemicalSystem objects
+    systems = []
+
+    # Loop through rows to create a ChemicalSystem for each entry
+    for i, row in df.iterrows():
+        system = ChemicalSystem()
+        system.chemical_formula = row['FORMULA']
+
+        # Empty lists to store composition and properties
+        composition = []
+        properties = []
+        for col in list(df):
+            # Parse non-zero compositions
+            if 'ACTUAL COMP' in col:
+                if row[col] > 1e-3:
+                    comp = Composition()
+                    comp.element = col.split(' ')[2]
+                    comp.actual_weight_percent = Scalar(value=row[col])
+                    composition.append(comp)
+            # Parse all remaining properties
+            elif 'PROPERTY' in col:
+                prop = Property()
+                prop.name = ' '.join(col.split(' ')[1:])
+                prop.scalars = [Scalar(value=row[col])]
+                properties.append(prop)
+        system.composition = composition
+        system.properties = properties
+
+        systems.append(system)
+
+    with open(fpath, 'w') as f:
+        pif.dump(systems, f, indent=4)
+
+    print('PIFs created and saved!')
+
+
+def create_and_upload_data(client, fpath, dataset_name, dataset_desc,
+                           public_flag=False):
+    '''
+    This function creates a dataset on Citrination and uploads the data
+    stored in PIF format at the specified filepath.
+
+    :param client: A CitrinationClient instance.
+    :param fpath: A string filepath for the PIF on the local system.
+    :param dataset_name: The string name for the dataset.
+    :param dataset_desc: The string description for the dataset.
+    :return: None
+    '''
+    # Create dataset and obtain ID
+    dataset = client.data.create_dataset(name=dataset_name,
+                                         description=dataset_desc,
+                                         public=public_flag)
+    dataset_id = dataset.id
+
+    # Upload data to dataset; guard against AWS timeout
+    start = time()
+    timeout = 240
+    while time() - start < timeout:
+        sleep(1)
+        try:
+            print('Uploading data...')
+            client.data.upload(dataset_id, fpath)
+            break
+        except:
+            if time() - start>=timeout:
+                raise RuntimeError("Possible AWS timeout, try re-running.")
+            continue
+
+    assert (client.data.matched_file_count(dataset_id) >= 1), "Upload failed."
+    return dataset_id
+
+
+
+# Extra function; not used
+def create_mapping_from_table_w_units(header_csv):
+    '''
+    This function takes a CSV file defining header abbreviations and creates
+    a dictionary mapping the abbreviation to the full name in a way that is
+    commensurate with the Citrine CSV Template Ingester.
+
+    :param header_csv: A string filepath to the CSV file.
+    :return mapping: A dictionary mapping abbreviation to full name.
+    '''
+    mapping = {}
+    df = pd.read_csv(header_csv)
+
+    # Read each row of the df
+    for index, row in df.iterrows():
+        # Check for composition column; keep as is
+        if row['Details'].startswith('%'):
+            mapping[row['Abbreviation']] = 'ACTUAL COMPOSITION: {} (wt %)'.format(
+                row['Abbreviation'])
+
+        # Check for fatigue strength column
+        elif 'fatigue' in row['Details'].lower():
+            mapping[row['Abbreviation']] = 'PROPERTY: {} (MPa)'.format(row['Details'])
+
+        # Check for temperature column
+        elif 'temperature' in row['Details'].lower():
+            mapping[row['Abbreviation']] = 'PROPERTY: {} (C)'.format(row['Details'])
+
+        # Check for time column
+        elif 'time' in row['Details'].lower():
+            mapping[row['Abbreviation']] = 'PROPERTY: {} (min)'.format(row['Details'])
+
+        # Check for rate column
+        elif 'rate' in row['Details'].lower():
+            mapping[row['Abbreviation']] = 'PROPERTY: {} (C/hr)'.format(row['Details'])
+
+        else:
+            mapping[row['Abbreviation']] = 'PROPERTY: {}'.format(row['Details'])
+
+    print('Mapping dictionary successfully created.')
+    return mapping
