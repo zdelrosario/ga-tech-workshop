@@ -276,7 +276,7 @@ greater than four would lead to overfitting, which is useful information.
 
 > ## Exercise: Machine Learning
 >
-> Complete [05_ml_exercise.ipynb](../files/exercises/05_ml_exercise.ipynb)
+> Complete [06_ml_exercise.ipynb](../files/exercises/06_ml_exercise.ipynb)
 {: .challenge}
 
 

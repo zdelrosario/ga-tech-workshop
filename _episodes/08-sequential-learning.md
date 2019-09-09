@@ -17,7 +17,7 @@ keypoints:
 
 > ## Exercise: Sequential Learning Simulation
 >
-> Complete [06_sl_exercise.ipynb](../files/exercises/06_sl_exercise.ipynb)
+> Complete [07_sl_exercise.ipynb](../files/exercises/07_sl_exercise.ipynb)
 {: .challenge}
 
 ## Further Study

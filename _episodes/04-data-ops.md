@@ -191,7 +191,7 @@ some of the
 
 > ## Exercise: Programmatic Data Operations
 >
-> Complete [03_data_exercise.ipynb](../files/exercises/03_data_exercise.ipynb)
+> Complete [04_data_exercise.ipynb](../files/exercises/04_data_exercise.ipynb)
 {: .challenge}
 
 [^1]: If you were to share a script with your API key, you will have shared your key with someone else. Game over!
