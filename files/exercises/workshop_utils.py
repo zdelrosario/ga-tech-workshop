@@ -507,4 +507,4 @@ def create_mapping_from_table_w_units(header_csv):
             mapping[row['Abbreviation']] = 'PROPERTY: {}'.format(row['Details'])
 
     print('Mapping dictionary successfully created.')
-    return mapping
+   eturn mapping
