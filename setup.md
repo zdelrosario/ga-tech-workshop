@@ -40,6 +40,12 @@ following commands.
 > {: .language-bash}
 {: .callout}
 
+### Tabula
+<!-- ------------------------- -->
+
+[Tabula](https://tabula.technology) is a free program for *liberating* data from
+PDF's. Please follow the previous link and install Tabula before the workshop.
+
 ## Exercises Files
 <!-- ------------------------- -->
 
