@@ -1,0 +1,288 @@
+% Created 2019-09-10 Tue 10:40
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+\author{Zach del Rosario (zdelrosario@citrine.io)}
+\date{\today}
+\title{Lesson Plan: Principles of Visualization}
+\hypersetup{
+ pdfauthor={Zach del Rosario (zdelrosario@citrine.io)},
+ pdftitle={Lesson Plan: Principles of Visualization},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 26.2 (Org mode 9.1.9)},
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+
+\section{Overview}
+\label{sec:org7719cc4}
+The purpose of this lesson is to help students understand the fundamental
+principles of visualizing data. This lesson draws on the work of Cleveland and
+McGill (1985, \emph{Science}) on the \emph{visual hierarchy}, a quantitative ranking of
+different methods of encoding numeric values in a visual fashion. As a result
+of working through this lesson, students will be able to:
+
+\begin{enumerate}
+\item Understand that visualization is accomplished through different \emph{visual
+encoding methods} -- the rungs on the visual hierarchy
+\item Understand that different rungs on the hierarchy convey information more or
+less accurately
+\item Use (2) to judge the efficacy of visualizations
+\end{enumerate}
+
+\section{Outline and Timings}
+\label{sec:org477b319}
+\begin{center}
+\begin{tabular}{lr}
+Task & Min\\
+\hline
+Setup \& Introduction & 5\\
+\hline
+P1: \textbf{Card sorting} & \\
+Q1 & 5\\
+Q2 & 2\\
+Q3 & 5\\
+Survey & 2\\
+Wrap & 5\\
+ & (19)\\
+\hline
+P2: \textbf{Gapminder} & \\
+Gapminder A & 7\\
+Gapminder B & 4\\
+A vs B & 5\\
+1 vs 2: walkthrough & 1\\
+ & (17)\\
+\hline
+Wrap & 5\\
+(Total) & (46)\\
+\end{tabular}
+\end{center}
+
+\section{Resources}
+\label{sec:org65390cc}
+\begin{itemize}
+\item \href{https://github.com/zdelrosario/teaching-eda/blob/master/viz\_tasks/challenge.md}{vis-tasks} challenge document
+\item \href{https://github.com/zdelrosario/teaching-eda/blob/master/viz\_tasks/grid.pdf}{vis-tasks} printable sheet
+\item \href{https://citrineinformatics.github.io/ga-tech-workshop/04-vis-principles/index.html}{vis-tasks notes} with Gapminder examples
+\item \href{https://ils.unc.edu/courses/2015\_spring/inls541\_001/Readings/Cleveland\%20and\%20McGill\%201985\%20-\%20Graphical\%20Perception\%20and\%20Cleveland1985-Graphical\%20Methods\%20for\%20Analyzing\%20Scientific\%20Data.pdf}{Cleveland and McGill} (1985) Science
+\item \href{https://www.gapminder.org/tools/\#\$chart-type=bubbles}{Gapminder data vis}
+\end{itemize}
+
+Table for \textbf{P1: Card sorting}
+\begin{itemize}
+\item You will iteratively build the following table during Part 1:
+\end{itemize}
+
+\begin{center}
+\begin{tabular}{rrrll}
+1 & 2 & 3 & CODE & Description\\
+\hline
+ &  &  & COM & Position along a common scale\\
+ &  &  & NON & Position along a non-aligned scale\\
+ &  &  & LEN & Length\\
+ &  &  & ANG & Angle\\
+ &  &  & PIR2 & Area\\
+ &  &  & SAT & Color saturation\\
+\end{tabular}
+\end{center}
+
+\section{Part 1: Card sorting}
+\label{sec:org78f8136}
+\uline{Before:} Do the following:
+\begin{itemize}
+\item Prepare to show the following websites (open in tabs):
+\begin{itemize}
+\item \href{https://citrineinformatics.github.io/ga-tech-workshop/05-vis-principles/index.html}{Pages site} -- Main tool for presenting
+\item \href{http://ils.unc.edu/courses/2015\_spring/inls541\_001/Readings/Cleveland\%20and\%20McGill\%201985\%20-\%20Graphical\%20Perception\%20and\%20Cleveland1985-Graphical\%20Methods\%20for\%20Analyzing\%20Scientific\%20Data.pdf}{Cleveland and McGill (1985)} -- reference for the visual hierarchy
+\item \href{https://www.gapminder.org/tools/\#\$chart-type=bubbles}{Gapminder visualization} -- to show how the Gapminder project shows their own data
+\end{itemize}
+\item Hand out cards for pairs
+\end{itemize}
+
+\uline{Beginning:} Say the following
+\begin{itemize}
+\item "For the next 50 minutes, we are going to work through a guided exercise
+together. You are going to work together in pairs on a set of questions, and
+we will share ideas in a full group discussin."
+\item "The cards you have depict a dataset. These data are from a dataset on
+imported cars; the `Count` is the number of vehicles of particular types in
+the dataset. We are going to focus mainly on how the data are displayed."
+\item "For the moment, we are going to focus on \uline{the same, single variable},
+displayed in different ways."
+\item (Show Q1 through Q3 on the \href{https://citrineinformatics.github.io/ga-tech-workshop/05-vis-principles/index.html}{Pages site}. \textbf{Zoom the page for visibility}.)
+\end{itemize}
+
+\uline{Q1:} (5 Minutes) How is `Count` displayed?
+\begin{itemize}
+\item Give one answer: "Position along a common scale"
+\item (While students are working, write the six codes stacked vertically on the
+board in order, i.e. the CODE column in the Table above.)
+\begin{itemize}
+\item COM, NON, LEN, ANG, PIR2, SAT
+\end{itemize}
+\item (Walk among students, listen in on their thinking, ask for volunteers to share
+in the larger group. Aim for 2-3 volunteers.)
+\item (Bring students back together. Get volunteers to share their ideas.)
+\item (Fill in the full table to disambiguate codenames:)
+\begin{itemize}
+\item COM -- Common scale
+\item NON -- Non-aligned scale
+\item LEN -- Length
+\item ANG -- Angle
+\item PIR2 -- Area
+\item SAT -- Color saturation
+\end{itemize}
+\end{itemize}
+
+\uline{Q2:} (2 Minutes) Answer the questions:
+\begin{itemize}
+\item "Which is larger? The `Count` of `wagons` with `fwd drive` OR the `Count` of
+`wagons` with `rwd drive`?
+(Count of `fwd wagon` is \textbf{larger} than `rwd wagon`)
+\item "By how much is one larger than the other?" (By about 2-3 counts.)
+\item (Make sure the \href{https://citrineinformatics.github.io/ga-tech-workshop/05-vis-principles/index.html}{Pages site} is visible to students; it is difficult to keep
+these questions in one's head!)
+\item (Can skip walking among the students; this question is very quick.)
+\end{itemize}
+
+\uline{Q3:} (5 Minutes) Rank the six visualizations \emph{in terms of how well they help you answer
+Q2}. Rate the most helpful visualization 1, and the least helpful as 6; do not
+allow ties between visualizations. \textbf{Make sure to rank at least your top 3.}
+\begin{itemize}
+\item (While students are working, fill in the grid lines from rank 1 to 3. Complete
+the table.)
+\item (Walk among students, listen in on their thinking, ask why they chose the
+particular rankings they did.)
+\end{itemize}
+
+\uline{Survey:} (2 Minutes) How many people Ranked COM 1? Ranked COM 2? Ranked COM 3?, etc. until
+pattern emerges.
+\begin{itemize}
+\item (Bring students back together. Count hands \textbf{for each cell} in the top three
+rows. There should be a nearly-diagonal pattern.)
+\item Ask "Why are we seeing this pattern of preference? It has to do with the
+\emph{visual hierarchy}."
+\end{itemize}
+
+\uline{Cleveland and McGill (1985)} (5 Minutes)
+\begin{itemize}
+\item "These visualizations are based on the rungs of Cleveland and McGill's \emph{visual
+hierarchy}. They studied \uline{how accurately} people could interpret graphs, based
+on how the data were visually encoded. They arrived at the following
+hierarchy, in descending order of accuracy:"
+\begin{enumerate}
+\item Position along a common scale
+\item Position on identical but nonaligned scales
+\item Length
+\item Angle; Slope (With slope not too close to 0, 90, or 180 degrees)
+\item Area
+\item Volume; Density; Color saturation
+\item Color hue
+\end{enumerate}
+\begin{itemize}
+\item Use \href{https://citrineinformatics.github.io/ga-tech-workshop/05-vis-principles/index.html}{Pages site} to quickly show hierarchy
+\end{itemize}
+\item (An aside: We asked something slightly different -- preference rather than accuracy.)
+\item \href{https://ils.unc.edu/courses/2015\_spring/inls541\_001/Readings/Cleveland\%20and\%20McGill\%201985\%20-\%20Graphical\%20Perception\%20and\%20Cleveland1985-Graphical\%20Methods\%20for\%20Analyzing\%20Scientific\%20Data.pdf}{publication link}
+
+\item "We can \emph{use} this insight to help judge and design graphs."
+\end{itemize}
+
+\section{Part 2: Gapminder}
+\label{sec:org4fc256a}
+\begin{itemize}
+\item Send remote folks to \href{https://citrineinformatics.github.io/ga-tech-workshop/04-vis-principles/index.html}{online notes}
+\item "Now, we are going to consider \uline{four different variables}, displayed on the
+same graph in different ways.
+\item "The data are from the Gapminder project, which seeks to educate people about
+global poverty."
+\end{itemize}
+
+\textbf{Gapminder A vs B}
+\begin{itemize}
+\item \uline{Q1:} (7 Minutes) Gapminder A
+\begin{itemize}
+\item (2 Minutes) How are the four variables `Population, GDP per Capita, Life Expectancy at
+Birth, Continent` encoded visually?
+\begin{itemize}
+\item (Have students Think-Pair-Share)
+\end{itemize}
+\item (5 Minutes) What observations can you make about the data based on the vis?
+\begin{itemize}
+\item (Have students Think-Pair-Share)
+\end{itemize}
+\end{itemize}
+
+\item \uline{Q2:} (4 Minutes) Gapminder B
+\begin{itemize}
+\item (2 Minutes) How are the four variables `Population, GDP per Capita, Life Expectancy at
+Birth, Continent` encoded visually?
+\begin{itemize}
+\item (Talk through this; ask for volunteers on the spot.)
+\end{itemize}
+\item (2 Minutes) What observations can you make about the data based on the vis?
+\end{itemize}
+
+\item \textbf{A vs B} (5 Minutes)
+\begin{itemize}
+\item "I find it easier to see the lower life expectancy in `Africa` based on Gapminder B."
+\item "With the \emph{visual hierarchy}, we can be more specific than 'this graph is
+bad' -- we can note that 'Continent has fewer levels, therefore it is easier
+to show with a color scale.'"
+\item Same data, same variables, different choice of encoding
+\end{itemize}
+\end{itemize}
+
+\textbf{Timeseries 1 vs 2} (1 Minute)
+\begin{itemize}
+\item Walkthrough two different visualizations
+\item "Here the choice is less obvious; depends on which variable I care about more
+-- GDP / capita or Life expectancy."
+\item "\textbf{Visualization is an iterative process.}"
+\end{itemize}
+
+\section{Finale}
+\label{sec:orgf35abf9}
+\begin{itemize}
+\item Wrapup (5 Minutes) "What did we talk about?"
+
+\item "Variables/numbers are \emph{encoded} visually to make a graph; we choose how to encode"
+\begin{itemize}
+\item (Gesture to the table to remind)
+\end{itemize}
+\item "We need to make these decisions when constructing a visualization."
+\begin{itemize}
+\item (Scroll through the Gapminder examples, use them to illustrate different choices.)
+\end{itemize}
+\item Lessons:
+\begin{itemize}
+\item \textbf{Use our linear scales preferentially} -- reserve for the "most important"
+continuous variables
+\item \textbf{Use secondary scales strategically} -- use for "secondary" variables, or
+categorical variables
+\end{itemize}
+\item \textbf{Visualization is an iterative process}
+\begin{itemize}
+\item We won't get the design perfect the first time.
+\end{itemize}
+\begin{itemize}
+\item What is "good" depends on our goals; exploratory graphs have very different
+goals than communication graphs.
+\end{itemize}
+\end{itemize}
+\end{document}
