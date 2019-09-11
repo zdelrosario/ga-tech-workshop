@@ -1,0 +1,4 @@
+citrination_client
+pypif_sdk
+matminer
+pymatgen
