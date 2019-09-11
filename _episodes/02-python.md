@@ -6,10 +6,10 @@ questions:
 - "What is python, and how do I use it?"
 - "What is jupyter, and how do I use it?"
 objectives:
-- "Open the jupyter client to read notebooks"
-- "Use basic Jupyter notebook organization and functions"
-- "Create and execute code cells"
-- "Use basic python operations: variables, modules, loops, and conditionals"
+- "Students open the jupyter client to read notebooks"
+- "Students use basic Jupyter notebook organization and functions"
+- "Students create and execute code cells"
+- "Students use basic python operations: variables, modules, loops, and conditionals"
 keypoints:
 - "Jupyter notebooks do not open like regular files; run `jupyter notebook` from the terminal."
 - "Python is a zero-based index language."

@@ -6,8 +6,8 @@ questions:
 - "How are numbers displayed visually?"
 - "How do we design _effective_ visualizations?"
 objectives:
-- "Learn the ways to display numbers visually."
-- "Use the _visual hierarchy_ to assess visualizations."
+- "Students learn the ways to display numbers visually."
+- "Students use the _visual hierarchy_ to assess visualizations."
 keypoints:
 - "Approaches higher on _The Visual Hierarchy_ tend to be more effective at displaying data accurately."
 - "Consider reserving your x- and y-axes for the _most important_ variables."
