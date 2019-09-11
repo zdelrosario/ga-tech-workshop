@@ -55,5 +55,5 @@ pack:
 clean:
 	# Intermediate data-files from cleaning workshop
 	rm -f data/messy_data_*
-	rm -f tabula-Agrawal_table_excerpt.csv
-	rm -f agrawal_steel_fatigue_dataset.csv
+	rm -f data/tabula-Agrawal_table_excerpt.csv
+	rm -f data/agrawal_steel_fatigue_dataset.csv
