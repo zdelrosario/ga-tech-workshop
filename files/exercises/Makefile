@@ -48,6 +48,7 @@ pack:
 	${pre07}_exercise.ipynb \
 	check_install.ipynb \
 	workshop_utils.py \
+	requirements.txt \
 	data/* \
 	incl/* 
 
