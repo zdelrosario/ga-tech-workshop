@@ -92,6 +92,19 @@ zone*](http://drewconway.com/zia/2013/3/26/the-data-science-venn-diagram)! If
 you intend to keep using machine learning for your work, then you need a *proper
 and complete* introduction to ML.
 
+### More Stats
+<!-- ------------------------- -->
+
+One key idea we did not cover in this workshop is *exploratory data analysis*
+(EDA) -- the process of exploring and understanding a dataset before pursuing
+more complicated analyses. This step is crucial to doing machine learning well,
+as lessons will inform building effective machine learning models.
+
+Allen Downey has written [Think
+Stats](https://greenteapress.com/wp/think-stats-2e/), which covers this topic in
+Python. The Data Challenge Lab's
+[curriculum](http://dcl-docs.stanford.edu/home/) covers this in R.
+
 ### A Proper Introduction to Machine Learning
 <!-- ------------------------- -->
 
