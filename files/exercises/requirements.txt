@@ -1,4 +1,4 @@
-citrination_client
+citrination_client<=5.0.1
 pypif_sdk
 matminer
 pymatgen
