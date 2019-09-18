@@ -74,6 +74,13 @@ python](https://www.anaconda.com/distribution/#download-section), which will
 provide *almost* everything you need. Make sure to install python version `>=
 3.0`.
 
+### Windows Installation
+<!-- ------------------------- -->
+
+If you are on Windows, you may need to install [Visual C++
+Studio](https://go.microsoft.com/fwlink/?LinkId=691126). Click the
+aforementioned link and install the tools.
+
 ### Python Modules
 <!-- ------------------------- -->
 
