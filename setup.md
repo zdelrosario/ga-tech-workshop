@@ -53,7 +53,8 @@ we use a program to look at *directories*. Your terminal does something similar
 -- at any point it is *located* in a particular *directory*. The following
 screenshot illustrates `c`hanging `d`irectories (`cd`) to my `Downloads` folder,
 then `l`i`s`ting (`ls`) the contents of said directory. This is where I placed
-the `exercises.zip` archive for the workshop.
+the `exercises.zip` archive for the workshop. (Note: On Windows, you must use
+the command `dir`, rather than `ls`.)
 
 <img src="./fig/terminal_cd.png" style="width:600px;">
 
