@@ -27,6 +27,7 @@ def getAPIKey(evar = "CITRINATION_API_KEY", filename = "./api.txt"):
         ))
         with open(filename, "r") as myfile:
             res = myfile.readline().strip()
+        print("{1:} found, loaded API key")
 
     return res
 
